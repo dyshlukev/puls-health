@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "YS Geo";
+  src: url("/fonts/YS Geo-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YS Geo";
+  src: url("/fonts/YS Geo-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YS Geo";
+  src: url("/fonts/YS Geo-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YS Geo";
+  src: url("/fonts/YS Geo-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YS Geo";
+  src: url("/fonts/YS Geo-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YS Geo";
+  src: url("/fonts/YS Geo-Heavy.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "YS Geo";
+  src: url("/fonts/YS Geo-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-background: #FAF7F2;
+  --color-foreground: #1A1A1A;
+  --color-brand-red: #F8604A;
+  --color-brand-red-hover: #E5503B;
+  --color-brand-purple: #6A5DFF;
+  --color-brand-yellow: #F9CA38;
+  --color-brand-gray: #909090;
+  --color-brand-light: #F2F2F2;
+  --color-surface: #FFFFFF;
+  --color-surface-dark: #111111;
+  --color-text-muted: #6B7280;
+  --font-sans: "YS Geo", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: #F8604A;
+  color: white;
+}
