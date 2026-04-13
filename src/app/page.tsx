@@ -21,7 +21,7 @@ const stagger = {
 /* ─── data ─── */
 const STATS = [
   { value: "80%", label: "инфарктов и инсультов", sub: "Можно предотвратить при ранней диагностике" },
-  { value: "60%", label: "онкозаболеваний", sub: "Можно выявить на ранней стадии" },
+  { value: "~70%", label: "случаев предиабета", sub: "Обратимы при раннем вмешательстве" },
   { value: "в 5 раз", label: "дешевле профилактика", sub: "Чем лечение запущенных заболеваний" },
 ];
 
@@ -52,7 +52,7 @@ const STEPS = [
   {
     num: "03",
     title: "Получите результаты",
-    desc: "ИИ сопоставляет ваши данные с клиническими рекомендациями и формирует понятный отчёт за секунды.",
+    desc: "ИИ анализирует данные и формирует отчёт. Врач проверяет результаты и даёт персональные рекомендации.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="w-10 h-10">
         <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" strokeWidth="2.5" />
@@ -205,9 +205,61 @@ const PARTNERS = [
 ];
 
 /* ─── components ─── */
+function LoginModal({ onClose }: { onClose: () => void }) {
+  const [code, setCode] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (code.trim() === "OneLife") {
+      window.location.href = "https://yandex-puls-demo.vercel.app";
+    } else {
+      setError(true);
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={onClose} />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="relative bg-white rounded-2xl p-8 w-full max-w-sm mx-4 shadow-2xl"
+      >
+        <button onClick={onClose} className="absolute top-4 right-4 text-black/30 hover:text-black/60 transition-colors">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <path d="M6 6l12 12M6 18L18 6" />
+          </svg>
+        </button>
+        <h3 className="text-xl font-bold mb-2">Ранний доступ</h3>
+        <p className="text-sm text-black/50 mb-6">Введите код приглашения для входа в демо-версию</p>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={code}
+            onChange={(e) => { setCode(e.target.value); setError(false); }}
+            placeholder="Код доступа"
+            className={`w-full px-4 py-3 rounded-xl border ${error ? "border-[#F8604A] ring-2 ring-[#F8604A]/20" : "border-black/10"} bg-[#FAF7F2] text-sm focus:outline-none focus:border-[#7A55FF] focus:ring-2 focus:ring-[#7A55FF]/20 transition-all`}
+            autoFocus
+          />
+          {error && <p className="text-xs text-[#F8604A] mt-2">Неверный код. Попробуйте ещё раз.</p>}
+          <button
+            type="submit"
+            className="w-full mt-4 px-5 py-3 bg-[#1A1A1A] text-white text-sm font-semibold rounded-xl hover:bg-[#333] transition-colors"
+          >
+            Войти
+          </button>
+        </form>
+      </motion.div>
+    </div>
+  );
+}
+
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   return (
+    <>
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FAF7F2]/80 backdrop-blur-xl border-b border-black/5">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
@@ -221,6 +273,9 @@ function Navbar() {
           <a href="#trust" className="hover:text-[#1A1A1A] transition-colors">Основа качества</a>
         </div>
         <div className="hidden md:flex items-center gap-3">
+          <button onClick={() => setShowLogin(true)} className="px-5 py-2.5 text-sm font-semibold text-[#1A1A1A] hover:text-[#7A55FF] transition-colors">
+            Войти
+          </button>
           <a href="#waitlist" className="px-5 py-2.5 bg-[#F8604A] text-white text-sm font-semibold rounded-full hover:bg-[#E5503B] transition-colors">
             В лист ожидания
           </a>
@@ -241,12 +296,17 @@ function Navbar() {
           <a href="#benefits" onClick={() => setOpen(false)} className="block text-sm font-medium py-2">Преимущества</a>
           <a href="#pricing" onClick={() => setOpen(false)} className="block text-sm font-medium py-2">Тарифы</a>
           <a href="#trust" onClick={() => setOpen(false)} className="block text-sm font-medium py-2">Основа качества</a>
+          <button onClick={() => { setOpen(false); setShowLogin(true); }} className="block w-full text-center text-sm font-semibold py-2">
+            Войти
+          </button>
           <a href="#waitlist" onClick={() => setOpen(false)} className="block text-center px-5 py-2.5 bg-[#F8604A] text-white text-sm font-semibold rounded-full">
             В лист ожидания
           </a>
         </motion.div>
       )}
     </nav>
+    {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+    </>
   );
 }
 
@@ -400,10 +460,10 @@ const AGENT_PIPELINE = [
 const AGENT_CAPABILITIES = [
   { label: "Запись в лабораторию", detail: "Инвитро, Хеликс, Гемотест, KDL" },
   { label: "Маршрутизация к врачу", detail: "По результатам анализов — к нужному специалисту" },
-  { label: "Подбор добавок", detail: "На основе дефицитов из вашего профиля" },
+  { label: "Подбор биологически активных добавок", detail: "На основе результатов анализов" },
   { label: "Календарь здоровья", detail: "Персональный план обследований на год" },
   { label: "Данные с устройств", detail: "Apple Watch, Whoop и другие — в единый профиль" },
-  { label: "Прогноз рисков", detail: "ИИ учится на каждом взаимодействии и становится точнее" },
+  { label: "Прогноз рисков", detail: "Определяет риски и подсказывает, какие обследования нужны для улучшения показателей" },
 ];
 
 function AliceAI() {
