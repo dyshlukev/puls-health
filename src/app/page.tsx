@@ -19,12 +19,6 @@ const stagger = {
 };
 
 /* ─── data ─── */
-const STATS = [
-  { value: "80%", label: "инфарктов и инсультов", sub: "Можно предотвратить при ранней диагностике" },
-  { value: "~70%", label: "случаев предиабета", sub: "Обратимы при раннем вмешательстве" },
-  { value: "в 5 раз", label: "дешевле профилактика", sub: "Чем лечение запущенных заболеваний" },
-];
-
 const STEPS = [
   {
     num: "01",
@@ -101,7 +95,7 @@ const BENEFITS = [
   },
   {
     title: "Раннее обнаружение",
-    desc: "ИИ находит отклонения до появления симптомов — онкология, кардиориски, метаболические нарушения.",
+    desc: "Система помогает врачу выявить отклонения до появления симптомов — онкология, кардиориски, метаболические нарушения.",
     color: "bg-[#6A5DFF]/15 text-[#6A5DFF]",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
@@ -364,21 +358,6 @@ function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Stats bar */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={stagger}
-          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 sm:divide-x divide-black/10"
-        >
-          {STATS.map((s, i) => (
-            <motion.div key={s.label} variants={fadeUp} custom={i + 4} className="text-center px-6">
-              <div className="text-4xl sm:text-5xl font-black text-[#1A1A1A]">{s.value}</div>
-              <div className="text-sm font-semibold text-[#1A1A1A] mt-1">{s.label}</div>
-              <div className="text-xs text-[#6B7280] mt-0.5">{s.sub}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
 
     </section>
@@ -439,14 +418,14 @@ const AGENT_PIPELINE = [
   },
   {
     step: "Анализ",
-    title: "Алиса находит риски",
-    desc: "Сопоставляет анамнез, наследственность и данные с устройств",
+    title: "Алиса собирает данные",
+    desc: "Сопоставляет анамнез, наследственность и данные с устройств для врача",
     color: "from-[#7A55FF] to-[#6335E0]",
   },
   {
     step: "Действие",
     title: "Записывает и направляет",
-    desc: "Бронирует лабораторию, подбирает врача, заказывает добавки",
+    desc: "Бронирует лабораторию, помогает выбрать врача, оформляет запись",
     color: "from-[#6335E0] to-[#4A1FB8]",
   },
   {
@@ -459,11 +438,11 @@ const AGENT_PIPELINE = [
 
 const AGENT_CAPABILITIES = [
   { label: "Запись в лабораторию", detail: "Инвитро, Хеликс, Гемотест, KDL" },
-  { label: "Маршрутизация к врачу", detail: "По результатам анализов — к нужному специалисту" },
+  { label: "Маршрутизация к врачу", detail: "Помогает подобрать нужного специалиста по профилю обследования" },
   { label: "Подбор биологически активных добавок", detail: "На основе результатов анализов" },
   { label: "Календарь здоровья", detail: "Персональный план обследований на год" },
   { label: "Данные с устройств", detail: "Apple Watch, Whoop и другие — в единый профиль" },
-  { label: "Прогноз рисков", detail: "Определяет риски и подсказывает, какие обследования нужны для улучшения показателей" },
+  { label: "Подготовка данных для врача", detail: "Собирает историю анализов и динамику показателей для консультации со специалистом" },
 ];
 
 function AliceAI() {
@@ -490,12 +469,12 @@ function AliceAI() {
             На базе Алисы
           </motion.div>
           <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black tracking-tight">
-            Не просто ИИ-чат.
+            Ваш персональный
             <br />
-            <span className="bg-gradient-to-r from-[#A88CFF] to-[#6335E0] bg-clip-text text-transparent">Агент, который действует.</span>
+            <span className="bg-gradient-to-r from-[#A88CFF] to-[#6335E0] bg-clip-text text-transparent">помощник в заботе о здоровье</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-5 text-lg text-black/50 max-w-2xl mx-auto">
-            Каждый вопрос о здоровье заканчивается конкретным действием — записью, направлением, рекомендацией.
+            Алиса помогает организовать обследования и подготовить данные для врача. Все медицинские решения принимает специалист.
           </motion.p>
         </motion.div>
 
@@ -545,7 +524,7 @@ function AliceAI() {
               </div>
               <div>
                 <p className="font-bold text-sm">Алиса AI</p>
-                <p className="text-xs text-black/40">агент активен</p>
+                <p className="text-xs text-black/40">онлайн</p>
               </div>
             </div>
             <div className="space-y-3">
@@ -555,10 +534,10 @@ function AliceAI() {
                   У отца был диабет. Что мне проверить?
                 </div>
               </motion.div>
-              {/* Alice identifies risks */}
+              {/* Alice collects info and helps organize */}
               <motion.div variants={fadeUp} custom={1} className="flex justify-start">
                 <div className="max-w-[85%] px-4 py-3 rounded-2xl rounded-bl-md bg-gradient-to-r from-[#A88CFF]/15 to-[#7A55FF]/10 text-black/80 text-sm leading-relaxed border border-[#7A55FF]/10">
-                  Наследственный риск диабета 2-го типа. Рекомендую проверить гликированный гемоглобин, глюкозу натощак и инсулин.
+                  С учётом семейного анамнеза врач может назначить проверку гликированного гемоглобина, глюкозы натощак и инсулина. Подобрать ближайшую лабораторию?
                 </div>
               </motion.div>
               {/* Alice offers timeslots */}
@@ -605,7 +584,7 @@ function AliceAI() {
             variants={stagger}
             className="space-y-4"
           >
-            <motion.p variants={fadeUp} className="text-sm font-bold text-[#7A55FF] uppercase tracking-wider mb-2">Что умеет агент</motion.p>
+            <motion.p variants={fadeUp} className="text-sm font-bold text-[#7A55FF] uppercase tracking-wider mb-2">Что умеет Алиса</motion.p>
             {AGENT_CAPABILITIES.map((cap, i) => (
               <motion.div
                 key={cap.label}
