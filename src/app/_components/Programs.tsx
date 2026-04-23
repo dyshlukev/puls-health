@@ -67,16 +67,23 @@ function ProgIllus({ k }: { k: ProgKind }) {
   return (
     <svg viewBox="0 0 220 240" style={{ width: "100%", height: "100%" }}>
       <g {...base} strokeWidth="1.6">
-        <circle cx="110" cy="100" r="42" />
-        <path d="M110 142 L110 196" />
-        <path d="M90 174 L130 174" />
+        <circle cx="110" cy="95" r="48" />
+        <path d="M110 143 L110 188" />
+        <path d="M88 172 L132 172" />
       </g>
       <g stroke={dim} strokeWidth="0.8" fill="none">
-        <circle cx="110" cy="100" r="62" strokeDasharray="3 5" />
+        <circle cx="110" cy="95" r="70" strokeDasharray="3 5" />
       </g>
-      <circle cx="172" cy="100" r="3" fill={col} />
-      <circle cx="110" cy="38" r="3" fill={col} />
-      <circle cx="48" cy="100" r="3" fill={col} />
+      <circle cx="180" cy="95" r="3" fill={col} />
+      <circle cx="110" cy="25" r="3" fill={col} />
+      <circle cx="40" cy="95" r="3" fill={col} />
+      <g stroke={dim} strokeWidth="0.8">
+        <line x1="20" y1="210" x2="200" y2="210" />
+      </g>
+      <path
+        d="M20 205 L50 200 L70 195 L95 190 L120 198 L150 193 L180 198 L200 192"
+        {...base}
+      />
     </svg>
   );
 }

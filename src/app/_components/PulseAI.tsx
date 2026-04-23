@@ -78,7 +78,7 @@ export function PulseAI() {
             display: "grid",
             gridTemplateColumns: "0.9fr 1.1fr",
             gap: 48,
-            alignItems: "start",
+            alignItems: "stretch",
           }}
         >
           <div
@@ -280,7 +280,7 @@ export function PulseAI() {
             </div>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
             <div
               style={{
                 fontFamily: "var(--font-serif)",
@@ -294,8 +294,10 @@ export function PulseAI() {
             </div>
             <div
               style={{
+                flex: 1,
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
+                gridTemplateRows: "repeat(3, 1fr)",
                 gap: 0,
                 borderTop: "1px solid rgba(255,255,255,0.1)",
               }}
@@ -304,28 +306,33 @@ export function PulseAI() {
                 <div
                   key={s[0]}
                   style={{
-                    padding: "26px 20px 26px 0",
+                    paddingTop: 0,
+                    paddingBottom: 0,
+                    paddingRight: 20,
+                    paddingLeft: i % 2 === 0 ? 0 : 20,
                     borderBottom: "1px solid rgba(255,255,255,0.1)",
                     borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.1)" : "none",
-                    paddingLeft: i % 2 === 0 ? 0 : 20,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    gap: 10,
                   }}
                 >
                   <div
                     style={{
                       fontFamily: "var(--font-text)",
                       fontWeight: 700,
-                      fontSize: 18,
+                      fontSize: 20,
                       letterSpacing: "-0.01em",
-                      marginBottom: 8,
                     }}
                   >
                     {s[0]}
                   </div>
                   <div
                     style={{
-                      fontSize: 14,
+                      fontSize: 14.5,
                       color: "rgba(255,255,255,0.6)",
-                      lineHeight: 1.45,
+                      lineHeight: 1.5,
                     }}
                   >
                     {s[1]}
