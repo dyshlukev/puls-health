@@ -28,12 +28,34 @@ export function Pricing() {
             fontSize: 20,
             color: "rgba(255,255,255,0.65)",
             maxWidth: "58ch",
-            margin: "0 0 32px",
+            margin: "0 0 20px",
           }}
         >
           Pick a ready-made panel — or let Pulse build one around you using onboarding answers and
           your wearables.
         </p>
+        <div
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 10,
+            padding: "8px 14px",
+            borderRadius: 999,
+            background: "rgba(255,255,255,0.05)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            fontSize: 13,
+            fontWeight: 600,
+            letterSpacing: "0.02em",
+            color: "rgba(255,255,255,0.85)",
+            marginBottom: 32,
+          }}
+        >
+          <span style={{ color: accent }}>From AED 499</span>
+          <span style={{ opacity: 0.4 }}>·</span>
+          <span>No subscription</span>
+          <span style={{ opacity: 0.4 }}>·</span>
+          <span>No hidden add-ons</span>
+        </div>
 
         <CategoryBrowser accent={accent} />
       </div>

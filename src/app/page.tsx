@@ -3,7 +3,6 @@ import { Hero } from "./_components/Hero";
 import { Problem } from "./_components/Problem";
 import { HowItWorks } from "./_components/HowItWorks";
 import { PulseAI } from "./_components/PulseAI";
-import { Benefits } from "./_components/Benefits";
 import { Pricing } from "./_components/Pricing";
 import { Programs } from "./_components/Programs";
 import { Trust } from "./_components/Trust";
@@ -17,7 +16,6 @@ export default function Home() {
       <Problem />
       <HowItWorks />
       <PulseAI />
-      <Benefits />
       <Pricing />
       <Programs />
       <Trust />
