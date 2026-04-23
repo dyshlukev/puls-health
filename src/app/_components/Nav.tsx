@@ -11,10 +11,12 @@ export function Nav() {
   return (
     <nav
       style={{
-        position: "sticky",
+        position: "fixed",
         top: 16,
+        left: "50%",
+        transform: "translateX(-50%)",
         zIndex: 50,
-        margin: "16px auto 0",
+        width: "calc(100% - 32px)",
         maxWidth: 1280,
         display: "flex",
         alignItems: "center",

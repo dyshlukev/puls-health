@@ -16,7 +16,7 @@ const CATS: Cat[] = [
   {
     name: "Build mine for me",
     hook: "6-min onboarding + wearable sync. Pulse picks the right panel.",
-    hues: [265, 290],
+    hues: [195, 225],
     personalised: true,
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round">
@@ -126,7 +126,7 @@ const CATS: Cat[] = [
     name: "Longevity",
     hook: "Age on paper. Not in your body.",
     price: "AED 1,290",
-    hues: [195, 225],
+    hues: [265, 290],
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round" strokeLinejoin="round">
         {/* Hourglass frame */}

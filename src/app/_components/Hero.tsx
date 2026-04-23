@@ -11,28 +11,64 @@ export function Hero() {
         background: "#000",
       }}
     >
-      <div
+      <style>{`
+        @media (prefers-reduced-motion: reduce) {
+          .hero-bg-video { display: none !important; }
+        }
+      `}</style>
+      <video
+        className="hero-bg-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 0,
-          background: `radial-gradient(60% 50% at 85% 15%, color-mix(in oklch, ${accent} 40%, transparent) 0%, transparent 60%), radial-gradient(50% 40% at 10% 90%, color-mix(in oklch, ${accent} 22%, transparent) 0%, transparent 60%)`,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          pointerEvents: "none",
         }}
-      />
+      >
+        <source src="/hero/bg.mp4" type="video/mp4" />
+      </video>
       <div
         style={{
           position: "absolute",
           inset: 0,
           zIndex: 1,
+          background:
+            "linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.7) 100%)",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 2,
+          background: `radial-gradient(60% 50% at 85% 15%, color-mix(in oklch, ${accent} 28%, transparent) 0%, transparent 60%), radial-gradient(50% 40% at 10% 90%, color-mix(in oklch, ${accent} 16%, transparent) 0%, transparent 60%)`,
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 3,
           backgroundImage: "var(--grain-url)",
           backgroundSize: "220px 220px",
-          opacity: 0.25,
+          opacity: 0.2,
           mixBlendMode: "overlay",
           pointerEvents: "none",
         }}
       />
 
-      <div style={{ position: "relative", zIndex: 2, maxWidth: 1440, margin: "0 auto" }}>
+      <div style={{ position: "relative", zIndex: 4, maxWidth: 1440, margin: "0 auto" }}>
         <div
           style={{
             display: "inline-flex",
@@ -80,13 +116,22 @@ export function Hero() {
           style={{
             margin: 0,
             maxWidth: "14ch",
-            fontSize: "clamp(56px, 10.5vw, 190px)",
-            lineHeight: 0.88,
+            fontSize: "clamp(48px, 8.2vw, 144px)",
+            lineHeight: 0.92,
+            textShadow: "0 2px 24px rgba(0,0,0,0.5)",
           }}
         >
           Know your health
           <br />
-          <span style={{ color: accent }}>before symptoms do.</span>
+          <span
+            style={{
+              color: accent,
+              textShadow:
+                "0 1px 0 rgba(0,0,0,0.85), 0 2px 14px rgba(0,0,0,0.9), 0 4px 32px rgba(0,0,0,0.7)",
+            }}
+          >
+            before symptoms do.
+          </span>
         </h1>
 
         <div
@@ -186,30 +231,6 @@ export function Hero() {
           </div>
         </div>
 
-        <div style={{ marginTop: 72, position: "relative", height: 80, opacity: 0.9 }}>
-          <svg
-            viewBox="0 0 1400 80"
-            preserveAspectRatio="none"
-            style={{ width: "100%", height: "100%" }}
-          >
-            <defs>
-              <linearGradient id="pulseGrad" x1="0" x2="1">
-                <stop offset="0%" stopColor="rgba(255,255,255,0.05)" />
-                <stop offset="15%" stopColor="rgba(255,255,255,0.3)" />
-                <stop offset="50%" stopColor="currentColor" />
-                <stop offset="85%" stopColor="rgba(255,255,255,0.3)" />
-                <stop offset="100%" stopColor="rgba(255,255,255,0.05)" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M 0 40 L 200 40 L 230 40 L 250 20 L 270 60 L 290 10 L 310 70 L 330 40 L 600 40 L 630 40 L 650 25 L 670 55 L 690 15 L 710 65 L 730 40 L 1000 40 L 1030 40 L 1050 22 L 1070 58 L 1090 12 L 1110 68 L 1130 40 L 1400 40"
-              stroke="url(#pulseGrad)"
-              strokeWidth="1.5"
-              fill="none"
-              style={{ color: accent }}
-            />
-          </svg>
-        </div>
       </div>
     </section>
   );

@@ -66,12 +66,43 @@ export function PulseAI() {
             lineHeight: 1.4,
             color: "rgba(255,255,255,0.7)",
             maxWidth: "54ch",
-            margin: "0 0 72px",
+            margin: "0 0 32px",
           }}
         >
           Not a chatbot quoting the internet. Pulse AI answers from your actual results, your
           trend, and your family context — then a licensed physician signs off.
         </p>
+        <div
+          style={{
+            position: "relative",
+            height: 72,
+            margin: "0 0 72px",
+            opacity: 0.9,
+          }}
+        >
+          <svg
+            viewBox="0 0 1400 80"
+            preserveAspectRatio="none"
+            style={{ width: "100%", height: "100%" }}
+          >
+            <defs>
+              <linearGradient id="pulseAiGrad" x1="0" x2="1">
+                <stop offset="0%" stopColor="rgba(255,255,255,0.05)" />
+                <stop offset="15%" stopColor="rgba(255,255,255,0.3)" />
+                <stop offset="50%" stopColor="currentColor" />
+                <stop offset="85%" stopColor="rgba(255,255,255,0.3)" />
+                <stop offset="100%" stopColor="rgba(255,255,255,0.05)" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M 0 40 L 200 40 L 230 40 L 250 20 L 270 60 L 290 10 L 310 70 L 330 40 L 600 40 L 630 40 L 650 25 L 670 55 L 690 15 L 710 65 L 730 40 L 1000 40 L 1030 40 L 1050 22 L 1070 58 L 1090 12 L 1110 68 L 1130 40 L 1400 40"
+              stroke="url(#pulseAiGrad)"
+              strokeWidth="1.5"
+              fill="none"
+              style={{ color: accent }}
+            />
+          </svg>
+        </div>
 
         <div
           style={{
