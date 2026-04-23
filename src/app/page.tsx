@@ -6,7 +6,6 @@ import { PulseAI } from "./_components/PulseAI";
 import { Benefits } from "./_components/Benefits";
 import { Pricing } from "./_components/Pricing";
 import { Programs } from "./_components/Programs";
-import { ChronicCare } from "./_components/ChronicCare";
 import { Trust } from "./_components/Trust";
 import { Waitlist } from "./_components/Waitlist";
 
@@ -21,7 +20,6 @@ export default function Home() {
       <Benefits />
       <Pricing />
       <Programs />
-      <ChronicCare />
       <Trust />
       <Waitlist />
     </>

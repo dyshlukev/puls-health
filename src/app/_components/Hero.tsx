@@ -84,9 +84,9 @@ export function Hero() {
             lineHeight: 0.88,
           }}
         >
-          Check your health
+          Know your health
           <br />
-          <span style={{ color: accent }}>before symptoms.</span>
+          <span style={{ color: accent }}>before symptoms do.</span>
         </h1>
 
         <div

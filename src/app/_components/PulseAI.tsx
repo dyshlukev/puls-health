@@ -1,27 +1,5 @@
 export function PulseAI() {
   const accent = "var(--pulse-accent)";
-  const capabilities = [
-    {
-      t: "Question",
-      h: "You ask",
-      d: '"Why did my cholesterol go up?" — by voice or text, in your own words.',
-    },
-    {
-      t: "Context",
-      h: "Reads your data",
-      d: "Cross-references your biomarker history, family context, and wearables.",
-    },
-    {
-      t: "Action",
-      h: "Books what you need",
-      d: "Schedules the retest, routes you to the right specialist, prepares a briefing for the doctor.",
-    },
-    {
-      t: "Follow-through",
-      h: "Tracks the trend",
-      d: "Monitors the next result, flags direction of change, nudges on schedule.",
-    },
-  ];
   const skills: [string, string][] = [
     ["Retest scheduling", "Same nurse, same lab, same window"],
     ["Specialist routing", "Right clinician, context pre-shared"],
@@ -305,51 +283,10 @@ export function PulseAI() {
           <div>
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                gap: 16,
-                marginBottom: 24,
-              }}
-            >
-              {capabilities.map((c) => (
-                <div
-                  key={c.t}
-                  style={{
-                    padding: 20,
-                    borderRadius: 20,
-                    background: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 10,
-                  }}
-                >
-                  <div className="y-label" style={{ color: accent }}>
-                    {c.t}
-                  </div>
-                  <div style={{ fontWeight: 700, fontSize: 17, letterSpacing: "-0.01em" }}>
-                    {c.h}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 13.5,
-                      lineHeight: 1.5,
-                      color: "rgba(255,255,255,0.65)",
-                    }}
-                  >
-                    {c.d}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div
-              style={{
                 fontFamily: "var(--font-serif)",
                 fontSize: 14,
                 color: "rgba(255,255,255,0.5)",
-                marginBottom: 14,
-                marginTop: 28,
+                marginBottom: 18,
                 fontStyle: "italic",
               }}
             >
@@ -360,25 +297,35 @@ export function PulseAI() {
                 display: "grid",
                 gridTemplateColumns: "repeat(2, 1fr)",
                 gap: 0,
-                borderTop: "1px solid rgba(255,255,255,0.08)",
+                borderTop: "1px solid rgba(255,255,255,0.1)",
               }}
             >
               {skills.map((s, i) => (
                 <div
                   key={s[0]}
                   style={{
-                    padding: "18px 16px 18px 0",
-                    borderBottom: "1px solid rgba(255,255,255,0.08)",
-                    borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.08)" : "none",
-                    paddingLeft: i % 2 === 0 ? 0 : 16,
+                    padding: "26px 20px 26px 0",
+                    borderBottom: "1px solid rgba(255,255,255,0.1)",
+                    borderRight: i % 2 === 0 ? "1px solid rgba(255,255,255,0.1)" : "none",
+                    paddingLeft: i % 2 === 0 ? 0 : 20,
                   }}
                 >
-                  <div style={{ fontWeight: 600, fontSize: 14.5, marginBottom: 4 }}>{s[0]}</div>
                   <div
                     style={{
-                      fontSize: 12.5,
-                      color: "rgba(255,255,255,0.55)",
-                      lineHeight: 1.4,
+                      fontFamily: "var(--font-text)",
+                      fontWeight: 700,
+                      fontSize: 18,
+                      letterSpacing: "-0.01em",
+                      marginBottom: 8,
+                    }}
+                  >
+                    {s[0]}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 14,
+                      color: "rgba(255,255,255,0.6)",
+                      lineHeight: 1.45,
                     }}
                   >
                     {s[1]}

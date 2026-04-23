@@ -1,5 +1,52 @@
 import { Fragment } from "react";
 
+type LoopStep = "Ask" | "Test" | "Read" | "Track" | "Retest";
+
+function LoopIcon({ step }: { step: LoopStep }) {
+  const s = {
+    width: 30,
+    height: 30,
+    stroke: "#fff",
+    strokeWidth: 1.6,
+    fill: "none",
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+  if (step === "Ask")
+    return (
+      <svg {...s} viewBox="0 0 28 28">
+        <path d="M5 8a3 3 0 013-3h12a3 3 0 013 3v8a3 3 0 01-3 3h-5l-4 4v-4H8a3 3 0 01-3-3z" />
+        <circle cx="14" cy="12" r="0.9" fill="#fff" stroke="none" />
+      </svg>
+    );
+  if (step === "Test")
+    return (
+      <svg {...s} viewBox="0 0 28 28">
+        <path d="M14 3c-4 4-7 7-7 11a7 7 0 0014 0c0-4-3-7-7-11z" />
+      </svg>
+    );
+  if (step === "Read")
+    return (
+      <svg {...s} viewBox="0 0 28 28">
+        <rect x="6" y="4" width="16" height="20" rx="2" />
+        <path d="M10 10h8M10 14h8M10 18h5" />
+      </svg>
+    );
+  if (step === "Track")
+    return (
+      <svg {...s} viewBox="0 0 28 28">
+        <path d="M4 20l6-6 4 4 6-8 4 4" />
+        <path d="M18 10h4v4" />
+      </svg>
+    );
+  return (
+    <svg {...s} viewBox="0 0 28 28">
+      <path d="M6 14a8 8 0 1114 5.3" />
+      <path d="M20 20v-5h-5" />
+    </svg>
+  );
+}
+
 export function Problem() {
   const accent = "var(--pulse-accent)";
   const fragments = [
@@ -175,7 +222,7 @@ export function Problem() {
                 justifyContent: "space-between",
               }}
             >
-              {["Ask", "Test", "Read", "Track", "Retest"].map((s, i, arr) => (
+              {(["Ask", "Test", "Read", "Track", "Retest"] as LoopStep[]).map((s, i, arr) => (
                 <Fragment key={s}>
                   <div
                     style={{
@@ -195,14 +242,10 @@ export function Problem() {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        fontFamily: "var(--font-headline)",
-                        fontWeight: 900,
-                        fontStyle: "italic",
-                        fontSize: 22,
                         color: "#fff",
                       }}
                     >
-                      {i + 1}
+                      <LoopIcon step={s} />
                     </div>
                     <div
                       style={{

@@ -123,7 +123,7 @@ export function Pricing() {
                 fontWeight: 600,
               }}
             >
-              Browse catalog ↓
+              Browse catalogue ↓
             </a>
           </div>
 

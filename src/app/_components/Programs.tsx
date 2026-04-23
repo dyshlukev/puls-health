@@ -51,15 +51,15 @@ function ProgIllus({ k }: { k: ProgKind }) {
     return (
       <svg viewBox="0 0 220 240" style={{ width: "100%", height: "100%" }}>
         <g {...base} strokeWidth="1.6">
-          <circle cx="95" cy="140" r="50" />
-          <path d="M135 100 L180 55" />
-          <path d="M150 50 L182 50 L182 82" />
+          <circle cx="100" cy="130" r="42" />
+          <path d="M132 98 L168 62" />
+          <path d="M146 62 L168 62 L168 84" />
         </g>
         <g stroke={dim} strokeWidth="0.8">
           <line x1="20" y1="210" x2="200" y2="210" />
         </g>
         <path
-          d="M20 210 L50 195 L70 205 L95 180 L120 195 L150 170 L180 185 L200 165"
+          d="M20 205 L50 192 L70 200 L95 182 L120 194 L150 174 L180 186 L200 170"
           {...base}
         />
       </svg>
@@ -67,16 +67,16 @@ function ProgIllus({ k }: { k: ProgKind }) {
   return (
     <svg viewBox="0 0 220 240" style={{ width: "100%", height: "100%" }}>
       <g {...base} strokeWidth="1.6">
-        <circle cx="110" cy="95" r="45" />
-        <path d="M110 140 L110 200" />
-        <path d="M88 175 L132 175" />
+        <circle cx="110" cy="100" r="42" />
+        <path d="M110 142 L110 196" />
+        <path d="M90 174 L130 174" />
       </g>
       <g stroke={dim} strokeWidth="0.8" fill="none">
-        <circle cx="110" cy="95" r="68" strokeDasharray="3 5" />
+        <circle cx="110" cy="100" r="62" strokeDasharray="3 5" />
       </g>
-      <circle cx="178" cy="95" r="3" fill={col} />
-      <circle cx="110" cy="27" r="3" fill={col} />
-      <circle cx="42" cy="95" r="3" fill={col} />
+      <circle cx="172" cy="100" r="3" fill={col} />
+      <circle cx="110" cy="38" r="3" fill={col} />
+      <circle cx="48" cy="100" r="3" fill={col} />
     </svg>
   );
 }
@@ -88,28 +88,24 @@ export function Programs() {
     tagline: string;
     ic: ProgKind;
     palette: PaletteKey;
-    price: string;
   }[] = [
     {
       name: "Weight",
       tagline: "Metabolic panel + GLP-1 protocol + monthly tracking",
       ic: "weight",
       palette: "ember",
-      price: "349",
     },
     {
-      name: "Men's health",
+      name: "Men's Health",
       tagline: "Testosterone, energy, hair, performance — monitored",
       ic: "men",
       palette: "azure",
-      price: "349",
     },
     {
-      name: "Women's health",
+      name: "Women's Health",
       tagline: "PCOS, perimenopause, thyroid — supervised by a specialist",
       ic: "women",
       palette: "magenta",
-      price: "349",
     },
   ];
   const PAL: Record<PaletteKey, string> = {
@@ -159,7 +155,7 @@ export function Programs() {
             margin: "0 0 56px",
           }}
         >
-          Condition-specific programs that continue past the first result — labs, a specialist,
+          Condition-specific programmes that continue past the first result — labs, a specialist,
           medication when needed, and monthly tracking on the same record.
         </p>
 
@@ -226,37 +222,17 @@ export function Programs() {
               >
                 <div
                   style={{
-                    display: "flex",
-                    alignItems: "baseline",
-                    justifyContent: "space-between",
-                    gap: 10,
+                    fontFamily: "var(--font-headline)",
+                    fontWeight: 900,
+                    fontStyle: "italic",
+                    textTransform: "uppercase",
+                    fontSize: 26,
+                    lineHeight: 1,
+                    color: "#fff",
+                    letterSpacing: "-0.01em",
                   }}
                 >
-                  <div
-                    style={{
-                      fontFamily: "var(--font-headline)",
-                      fontWeight: 900,
-                      fontStyle: "italic",
-                      textTransform: "uppercase",
-                      fontSize: 26,
-                      lineHeight: 1,
-                      color: "#fff",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    {p.name}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-text)",
-                      fontWeight: 600,
-                      fontSize: 13,
-                      color: "rgba(255,255,255,0.85)",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    AED {p.price}/mo
-                  </div>
+                  {p.name}
                 </div>
                 <div
                   style={{

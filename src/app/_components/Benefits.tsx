@@ -63,7 +63,7 @@ export function Benefits() {
     },
     {
       t: "Clinically grounded",
-      d: 'Results read against WHO, ESC, and local clinical protocols. Never "AI guessed so".',
+      d: 'Results read against WHO, ESC, and local clinical protocols. Never "because the AI said so."',
       p: "azure",
       i: "clinical",
     },

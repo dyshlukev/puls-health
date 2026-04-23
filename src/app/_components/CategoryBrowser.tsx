@@ -1,22 +1,22 @@
 "use client";
 
-const CATS: { name: string; count: number; badge?: string; hues: [number, number] }[] = [
-  { name: "Best Sellers", count: 8, badge: "Popular", hues: [28, 48] },
+const CATS: { name: string; count: number; hues: [number, number] }[] = [
+  { name: "Best Sellers", count: 8, hues: [28, 48] },
   { name: "Women's Health", count: 6, hues: [330, 12] },
   { name: "Men's Health", count: 5, hues: [210, 240] },
   { name: "Kids' Health", count: 3, hues: [180, 200] },
-  { name: "Under 99 AED", count: 4, badge: "50% OFF", hues: [14, 28] },
+  { name: "Heart Health", count: 4, hues: [14, 28] },
   { name: "IV Therapy", count: 7, hues: [260, 290] },
   { name: "Intolerance & Allergy", count: 4, hues: [80, 110] },
   { name: "General Blood Tests", count: 9, hues: [200, 220] },
   { name: "Sexual Health", count: 3, hues: [340, 360] },
-  { name: "Blood Tests for Wearables", count: 4, badge: "New", hues: [150, 180] },
+  { name: "Blood Tests for Wearables", count: 4, hues: [150, 180] },
   { name: "Hormone Tests", count: 6, hues: [300, 330] },
   { name: "DNA Tests", count: 3, hues: [240, 270] },
   { name: "Advanced Blood Tests", count: 5, hues: [20, 50] },
   { name: "Functional Tests", count: 4, hues: [0, 20] },
   { name: "Longevity & Aging", count: 3, hues: [190, 230] },
-  { name: "Weight Loss", count: 4, badge: "Programs", hues: [50, 80] },
+  { name: "Weight Loss", count: 4, hues: [50, 80] },
 ];
 
 function Icon({ i }: { i: number }) {
@@ -167,25 +167,6 @@ export function CategoryBrowser({ accent }: { accent: string }) {
                 }}
               />
               <Icon i={i} />
-              {c.badge && (
-                <span
-                  style={{
-                    position: "absolute",
-                    top: 6,
-                    left: 6,
-                    fontSize: 8.5,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    fontWeight: 800,
-                    padding: "3px 6px",
-                    borderRadius: 6,
-                    background: "#fff",
-                    color: "#000",
-                  }}
-                >
-                  {c.badge}
-                </span>
-              )}
             </div>
             <div
               style={{

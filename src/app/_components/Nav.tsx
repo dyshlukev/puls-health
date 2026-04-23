@@ -36,7 +36,7 @@ export function Nav() {
             fontFamily: "var(--font-headline)",
             fontWeight: 900,
             fontStyle: "italic",
-            fontSize: 26,
+            fontSize: 36,
             letterSpacing: "-0.02em",
             lineHeight: 1,
             color: "#fff",
@@ -47,7 +47,7 @@ export function Nav() {
         <span
           style={{
             fontFamily: "var(--font-serif)",
-            fontSize: 11,
+            fontSize: 13,
             color: "rgba(255,255,255,0.55)",
             letterSpacing: "0.02em",
           }}

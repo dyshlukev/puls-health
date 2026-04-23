@@ -54,7 +54,7 @@ export function HowItWorks() {
     },
     {
       n: "03",
-      t: "Results reviewed",
+      t: "A doctor signs off",
       ic: "review",
       d: "Results land in your cabinet, checked against clinical protocols. A licensed physician signs off — you can ask follow-up questions.",
     },
