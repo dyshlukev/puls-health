@@ -14,7 +14,7 @@ const DOCTORS: Doctor[] = [
   {
     name: "Dr. Amira Al-Mansoori",
     credentials: "MD · MRCP",
-    role: "Chief Medical Officer",
+    role: "Chair, Clinical Protocols",
     specialty: "Internal Medicine",
     years: "14y",
     affiliation: "Cleveland Clinic Abu Dhabi",
@@ -25,8 +25,8 @@ const DOCTORS: Doctor[] = [
   {
     name: "Dr. Rohan Mehta",
     credentials: "MD, FACC",
-    role: "Cardiology Lead",
-    specialty: "Cardiology & Lipids",
+    role: "Cardiology & Lipid Panels",
+    specialty: "Cardiology",
     years: "12y",
     affiliation: "American Hospital Dubai",
     trained: "AIIMS · Imperial College London",
@@ -36,8 +36,8 @@ const DOCTORS: Doctor[] = [
   {
     name: "Prof. Omar Khalil",
     credentials: "MD, PhD",
-    role: "Endocrinology Lead",
-    specialty: "Endocrinology & Metabolism",
+    role: "Endocrinology & Metabolic Panels",
+    specialty: "Endocrinology",
     years: "18y",
     affiliation: "King's College Hospital Dubai",
     trained: "Cairo University · Charité Berlin",
@@ -47,8 +47,8 @@ const DOCTORS: Doctor[] = [
   {
     name: "Dr. Layla Haddad",
     credentials: "MD, MRCOG",
-    role: "Women's Health Lead",
-    specialty: "OB-GYN & Hormones",
+    role: "Women's Health & Hormones",
+    specialty: "OB-GYN",
     years: "11y",
     affiliation: "Mediclinic City Hospital",
     trained: "American University of Beirut",
@@ -93,24 +93,26 @@ export function Experts() {
             fontStyle: "italic",
           }}
         >
-          the people
+          the clinical board
         </div>
-        <h2 className="y-display-md" style={{ margin: "0 0 20px", maxWidth: "20ch" }}>
-          Reviewed by doctors.
+        <h2 className="y-display-md" style={{ margin: "0 0 20px", maxWidth: "22ch" }}>
+          Every panel.
           <br />
-          <span style={{ color: accent }}>Not models.</span>
+          Every protocol.
+          <br />
+          <span style={{ color: accent }}>Approved by doctors.</span>
         </h2>
         <p
           style={{
             fontFamily: "var(--font-serif)",
             fontSize: 20,
             color: "rgba(255,255,255,0.65)",
-            maxWidth: "58ch",
+            maxWidth: "62ch",
             margin: "0 0 56px",
           }}
         >
-          Every Pulse report is signed off by a DHA-licensed physician before it reaches you. Here
-          are the people behind that signature.
+          Our panels, reference ranges, and clinical protocols are co-designed and peer-reviewed
+          by practicing physicians. They set the standard every Pulse report is measured against.
         </p>
 
         {/* Stat strip */}
@@ -125,9 +127,9 @@ export function Experts() {
           }}
         >
           {[
+            { n: "4", k: "practicing physicians on the clinical advisory board" },
             { n: "55+", k: "years combined clinical experience" },
-            { n: "4", k: "DHA-licensed physicians on staff" },
-            { n: "100%", k: "of reports physician-signed" },
+            { n: "100%", k: "of panels and protocols peer-reviewed before launch" },
           ].map((s, i) => (
             <div
               key={s.k}
@@ -267,7 +269,7 @@ export function Experts() {
                       backdropFilter: "blur(6px)",
                     }}
                   >
-                    DHA · {d.years}
+                    {d.years.toUpperCase()} · {d.specialty}
                   </div>
                 </div>
                 <div style={{ padding: "20px 20px 22px" }}>
@@ -302,31 +304,21 @@ export function Experts() {
                       letterSpacing: "0.08em",
                       textTransform: "uppercase",
                       color: accent,
-                      marginBottom: 10,
+                      marginBottom: 12,
                     }}
                   >
                     {d.role}
                   </div>
                   <div
                     style={{
-                      fontSize: 13.5,
+                      fontSize: 13,
                       lineHeight: 1.5,
-                      color: "rgba(255,255,255,0.75)",
-                      marginBottom: 6,
-                    }}
-                  >
-                    {d.specialty}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: 12.5,
-                      lineHeight: 1.5,
-                      color: "rgba(255,255,255,0.5)",
+                      color: "rgba(255,255,255,0.6)",
                     }}
                   >
                     {d.affiliation}
                     <br />
-                    <span style={{ fontStyle: "italic", opacity: 0.85 }}>{d.trained}</span>
+                    <span style={{ fontStyle: "italic", opacity: 0.8 }}>{d.trained}</span>
                   </div>
                 </div>
               </div>

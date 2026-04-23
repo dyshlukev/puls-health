@@ -17,8 +17,8 @@ export default function Home() {
       <Problem />
       <HowItWorks />
       <PulseAI />
-      <Pricing />
       <Experts />
+      <Pricing />
       <Programs />
       <Trust />
       <Waitlist />
