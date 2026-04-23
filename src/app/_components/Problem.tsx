@@ -53,22 +53,22 @@ export function Problem() {
     {
       l: "A clinic visit",
       h: "Queue, labs, PDF.",
-      d: "You leave with values you can't read. The doctor has ten minutes.",
+      missing: "No one owns the follow-up.",
     },
     {
       l: "A search bar",
       h: "Google, ChatGPT.",
-      d: "Generic advice, no access to your actual biomarkers or history.",
+      missing: "No access to your biomarkers.",
     },
     {
       l: "A wearable",
       h: "Apple Watch, Whoop, Oura.",
-      d: "Lifestyle signals. Not a diagnosis, not a treatment, not a retest.",
+      missing: "No diagnosis. No retest.",
     },
     {
       l: "Supplements",
       h: "Instagram protocols.",
-      d: "Bought on vibes. Nobody tracks whether anything actually moved.",
+      missing: "Nothing is actually tracked.",
     },
   ];
   return (
@@ -111,40 +111,65 @@ export function Problem() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 0,
-            borderTop: "1px solid rgba(255,255,255,0.1)",
+            gap: 14,
             marginBottom: 56,
           }}
         >
-          {fragments.map((c, i) => (
+          {fragments.map((c) => (
             <div
               key={c.l}
               style={{
-                padding: "32px 24px 32px 0",
-                paddingLeft: i === 0 ? 0 : 24,
-                borderRight: i < 3 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                position: "relative",
+                padding: "22px 22px 20px",
+                borderRadius: 14,
+                border: "1px dashed rgba(255,255,255,0.14)",
+                background: "rgba(255,255,255,0.02)",
                 display: "flex",
                 flexDirection: "column",
-                gap: 14,
+                gap: 12,
               }}
             >
-              <div className="y-label" style={{ color: "rgba(255,255,255,0.5)" }}>
+              <div
+                style={{
+                  fontFamily: "var(--font-mono, ui-monospace, SFMono-Regular, monospace)",
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "rgba(255,255,255,0.4)",
+                }}
+              >
                 {c.l}
               </div>
               <div
                 style={{
                   fontFamily: "var(--font-text)",
-                  fontWeight: 700,
-                  fontSize: 21,
-                  lineHeight: 1.15,
-                  color: "#fff",
-                  letterSpacing: "-0.015em",
+                  fontWeight: 500,
+                  fontSize: 19,
+                  lineHeight: 1.2,
+                  color: "rgba(255,255,255,0.78)",
+                  letterSpacing: "-0.01em",
+                  textDecoration: "line-through",
+                  textDecorationColor: "rgba(255,255,255,0.35)",
+                  textDecorationThickness: "1px",
                 }}
               >
                 {c.h}
               </div>
-              <div style={{ fontSize: 14.5, lineHeight: 1.55, color: "rgba(255,255,255,0.62)" }}>
-                {c.d}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: 8,
+                  marginTop: "auto",
+                  paddingTop: 6,
+                  fontSize: 13.5,
+                  lineHeight: 1.45,
+                  color: accent,
+                  fontWeight: 500,
+                }}
+              >
+                <span aria-hidden="true" style={{ lineHeight: 1.4 }}>✕</span>
+                <span>{c.missing}</span>
               </div>
             </div>
           ))}
