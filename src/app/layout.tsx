@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Платформа превентивной медицины — Доступные анализы и ИИ-инсайты",
+  title: "Pulse — Preventive health, by Yango",
   description:
-    "100+ биомаркеров. ИИ-аналитика здоровья. Доступная превентивная медицина.",
+    "Curated lab packages, a personal health cabinet, and AI that reads your own biomarkers. Home draw in 60–90 min across the UAE.",
 };
 
 export default function RootLayout({
@@ -13,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="h-full antialiased">
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

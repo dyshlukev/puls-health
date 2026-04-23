@@ -1,68 +1,127 @@
 @import "tailwindcss";
 
+/* =========================================================
+   YANGO DESIGN SYSTEM — CORE TOKENS
+   ========================================================= */
+
 @font-face {
-  font-family: "YS Geo";
-  src: url("/fonts/YS Geo-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "YS Geo";
-  src: url("/fonts/YS Geo-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "YS Geo";
-  src: url("/fonts/YS Geo-Regular.ttf") format("truetype");
+  font-family: "Yango Text";
+  src: url("/fonts/yango/YangoGroupText-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "YS Geo";
-  src: url("/fonts/YS Geo-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "YS Geo";
-  src: url("/fonts/YS Geo-Bold.ttf") format("truetype");
+  font-family: "Yango Text";
+  src: url("/fonts/yango/YangoGroupText-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "YS Geo";
-  src: url("/fonts/YS Geo-Heavy.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
+  font-family: "Yango Headline";
+  src: url("/fonts/yango/YangoGroupHeadline-HeavyItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "YS Geo";
-  src: url("/fonts/YS Geo-Black.ttf") format("truetype");
+  font-family: "Yango Headline Arabic";
+  src: url("/fonts/yango/YangoGroupHeadline-HeavyArabic.ttf") format("truetype");
   font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF;
+}
+@font-face {
+  font-family: "Yango Serif";
+  src: url("/fonts/yango/YangoGroupSerif-Regular.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
+:root {
+  --font-text: "Yango Text", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-headline: "Yango Headline", "Yango Text", "Inter", system-ui, sans-serif;
+  --font-serif: "Yango Serif", "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  --font-arabic: "Yango Headline Arabic", "Yango Text", sans-serif;
+
+  --ink-0: #000000;
+  --ink-1: #0a0a0a;
+  --ink-2: #141414;
+  --ink-3: #1e1e1e;
+  --ink-4: #2a2a2a;
+  --ink-5: #3d3d3d;
+
+  --paper-0: #ffffff;
+  --paper-1: #f7f6f3;
+  --paper-2: #edebe4;
+  --paper-3: #d9d6cc;
+
+  --fg-1: #ffffff;
+  --fg-2: rgba(255, 255, 255, 0.72);
+  --fg-3: rgba(255, 255, 255, 0.48);
+  --fg-4: rgba(255, 255, 255, 0.24);
+
+  --accent-violet: #6b4ee8;
+  --accent-violet-deep: #2e1e5e;
+  --accent-magenta: #b24a80;
+  --accent-magenta-deep: #4a1d34;
+  --accent-graphite: #6f7479;
+  --accent-graphite-deep: #242628;
+  --accent-azure: #2f6bb8;
+  --accent-azure-deep: #0e2a4a;
+  --accent-ember: #d94a2a;
+  --accent-ember-deep: #4a0e06;
+  --accent-crimson: #c8173b;
+  --accent-crimson-deep: #3e0510;
+
+  --status-success: #36c28e;
+  --status-warning: #f5a524;
+  --status-danger: #e5484d;
+  --status-info: #4e8df5;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 40px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --grain-url: url("/assets/grain.svg");
+
+  --size-display-xl: clamp(72px, 12vw, 200px);
+  --size-display-lg: clamp(56px, 8vw, 128px);
+  --size-display-md: clamp(40px, 5vw, 80px);
+  --size-h1: clamp(36px, 4vw, 64px);
+  --size-h2: clamp(28px, 3vw, 44px);
+  --size-h3: 28px;
+  --size-h4: 22px;
+
+  --lh-display: 0.92;
+  --lh-heading: 1.1;
+  --lh-body: 1.5;
+
+  --track-tight: -0.02em;
+  --track-caps: 0.12em;
+
+  --pulse-accent: #6b4ee8;
+}
+
 @theme inline {
-  --color-background: #FAF7F2;
-  --color-foreground: #1A1A1A;
-  --color-brand-red: #F8604A;
-  --color-brand-red-hover: #E5503B;
-  --color-brand-purple: #6A5DFF;
-  --color-brand-yellow: #F9CA38;
-  --color-brand-gray: #909090;
-  --color-brand-light: #F2F2F2;
-  --color-surface: #FFFFFF;
-  --color-surface-dark: #111111;
-  --color-text-muted: #6B7280;
-  --font-sans: "YS Geo", system-ui, sans-serif;
+  --font-sans: "Yango Text", "Inter", system-ui, sans-serif;
+  --font-headline: "Yango Headline", "Yango Text", sans-serif;
+  --font-serif: "Yango Serif", Georgia, serif;
+  --color-pulse-accent: var(--pulse-accent);
 }
 
 html {
@@ -70,12 +129,61 @@ html {
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-text);
+  min-width: 1280px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.7;
+  }
 }
 
 ::selection {
-  background-color: #F8604A;
-  color: white;
+  background: var(--pulse-accent);
+  color: #fff;
+}
+
+/* Typography utilities */
+.y-display-xl,
+.y-display-lg,
+.y-display-md {
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: var(--track-tight);
+  line-height: var(--lh-display);
+  color: var(--fg-1);
+}
+.y-display-xl {
+  font-size: var(--size-display-xl);
+}
+.y-display-lg {
+  font-size: var(--size-display-lg);
+}
+.y-display-md {
+  font-size: var(--size-display-md);
+}
+
+.y-label {
+  font-family: var(--font-text);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: var(--track-caps);
+  color: var(--fg-2);
 }

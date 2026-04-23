@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Yango Y mark">
+  
+  <circle cx="32" cy="32" r="31" fill="none" stroke="currentColor" stroke-width="2"></circle>
+  <path d="M18 17 L32 36 L46 17 M32 36 L32 49" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" transform="skewX(-8)"></path>
+</svg>
