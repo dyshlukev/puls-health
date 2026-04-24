@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 const DEMO_URL = "https://yandex-puls-demo.vercel.app";
 const DEMO_CODE = "OneLife";
@@ -21,10 +22,15 @@ const linkStyle: React.CSSProperties = {
 
 export function SignInGate() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [pwd, setPwd] = useState("");
   const [error, setError] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -69,7 +75,7 @@ export function SignInGate() {
         Sign in
       </button>
 
-      {open && (
+      {open && mounted && createPortal(
         <div
           onClick={() => setOpen(false)}
           role="dialog"
@@ -82,10 +88,9 @@ export function SignInGate() {
             background: "rgba(0,0,0,0.65)",
             backdropFilter: "blur(14px)",
             WebkitBackdropFilter: "blur(14px)",
+            overflowY: "auto",
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "5vw",
+            padding: "24px",
           }}
         >
           <div
@@ -94,6 +99,7 @@ export function SignInGate() {
               position: "relative",
               width: "100%",
               maxWidth: 440,
+              margin: "auto",
               borderRadius: 22,
               padding: "40px 36px 32px",
               background:
@@ -264,7 +270,8 @@ export function SignInGate() {
               Don&apos;t have a code? Request one on the waitlist.
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
