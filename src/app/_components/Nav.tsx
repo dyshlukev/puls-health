@@ -1,3 +1,5 @@
+import { SignInGate } from "./SignInGate";
+
 export function Nav() {
   const linkStyle: React.CSSProperties = {
     color: "rgba(255,255,255,0.85)",
@@ -58,7 +60,7 @@ export function Nav() {
         </span>
       </a>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
         <a href="#problem" style={linkStyle}>
           Why Pulse
         </a>
@@ -68,11 +70,14 @@ export function Nav() {
         <a href="#ai" style={linkStyle}>
           Pulse AI
         </a>
+        <a href="#experts" style={linkStyle}>
+          Clinical board
+        </a>
         <a href="#packages" style={linkStyle}>
           Packages
         </a>
-        <a href="#trust" style={linkStyle}>
-          Trust
+        <a href="#programs" style={linkStyle}>
+          Programs
         </a>
       </div>
 
@@ -94,7 +99,7 @@ export function Nav() {
         >
           🇦🇪 UAE
         </span>
-        <a style={{ ...linkStyle, color: "rgba(255,255,255,0.75)" }}>Sign in</a>
+        <SignInGate />
         <a
           href="#waitlist"
           style={{
