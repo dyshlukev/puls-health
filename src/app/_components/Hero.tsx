@@ -200,7 +200,7 @@ export function Hero() {
             {[
               { n: "60min", k: "home draw" },
               { n: "50+", k: "curated panels" },
-              { n: "1 app", k: "every result" },
+              { n: "for life", k: "your record" },
             ].map((m) => (
               <div
                 key={m.k}

@@ -54,9 +54,9 @@ export function HowItWorks() {
     },
     {
       n: "03",
-      t: "A doctor signs off",
+      t: "A doctor reads your record",
       ic: "review",
-      d: "Results land in your cabinet, checked against clinical protocols. A licensed physician signs off — you can ask follow-up questions.",
+      d: "A licensed physician sees your full trend, not just today's PDF. They answer in minutes, not days — because the context is already there.",
     },
     {
       n: "04",

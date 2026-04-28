@@ -60,7 +60,7 @@ export function Nav() {
         </span>
       </a>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
         <a href="#problem" style={linkStyle}>
           Why Pulse
         </a>
@@ -70,14 +70,20 @@ export function Nav() {
         <a href="#ai" style={linkStyle}>
           Pulse AI
         </a>
-        <a href="#experts" style={linkStyle}>
-          Clinical board
+        <a href="#doctor" style={linkStyle}>
+          Doctor
         </a>
-        <a href="#packages" style={linkStyle}>
-          Packages
+        <a href="#family" style={linkStyle}>
+          Family
         </a>
-        <a href="#programs" style={linkStyle}>
-          Programs
+        <a href="#pricing" style={linkStyle}>
+          Pricing
+        </a>
+        <a href="#pulse-care" style={linkStyle}>
+          Pulse Care
+        </a>
+        <a href="#faq" style={linkStyle}>
+          FAQ
         </a>
       </div>
 

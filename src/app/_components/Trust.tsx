@@ -2,6 +2,7 @@ export function Trust() {
   const items = [
     { k: "Regulatory", v: "DHA · DOH licensed" },
     { k: "Lab network", v: "Top UAE operators" },
+    { k: "Medical history", v: "DHA import via UAE Pass" },
     { k: "Your data", v: "In-region, exportable" },
     { k: "Group", v: "Backed by Yango" },
   ];
@@ -11,7 +12,7 @@ export function Trust() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(5, 1fr)",
             gap: 16,
             padding: "24px 28px",
             borderRadius: 20,

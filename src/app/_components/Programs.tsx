@@ -145,7 +145,7 @@ export function Programs() {
               color: "rgba(255,255,255,0.7)",
             }}
           >
-            Coming next
+            On the record
           </span>
         </div>
         <h2 className="y-display-md" style={{ margin: "0 0 20px", maxWidth: "18ch" }}>
