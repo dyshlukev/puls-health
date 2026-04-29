@@ -133,7 +133,12 @@ body {
   background: #000;
   color: #fff;
   font-family: var(--font-text);
-  min-width: 1280px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    min-width: 1280px;
+  }
 }
 
 * {
@@ -186,4 +191,351 @@ body {
   text-transform: uppercase;
   letter-spacing: var(--track-caps);
   color: var(--fg-2);
+}
+
+/* =========================================================
+   MOBILE OVERRIDES (≤768px)
+   The page is desktop-first with inline grid styles. We use
+   attribute selectors with !important to collapse multi-column
+   grids and shrink padding without rewriting components.
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Body & section padding */
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+  section#top {
+    padding-top: 96px !important;
+    padding-bottom: 56px !important;
+    min-height: auto !important;
+  }
+  section#trust {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* Display sizes */
+  .y-display-xl {
+    font-size: clamp(48px, 12vw, 84px) !important;
+    line-height: 0.95 !important;
+  }
+  .y-display-md {
+    font-size: clamp(30px, 8vw, 44px) !important;
+    line-height: 1.05 !important;
+  }
+  h1, h2, h3 {
+    max-width: 100% !important;
+  }
+
+  /* === GLOBAL GRID COLLAPSE === */
+  /* Most multi-column grids collapse to single column */
+  section [style*="grid-template-columns:repeat(4, 1fr)"],
+  section [style*="grid-template-columns:repeat(3, 1fr)"],
+  section [style*="grid-template-columns:repeat(2, 1fr)"],
+  section [style*="grid-template-columns:1fr 1fr"],
+  section [style*="grid-template-columns:1fr 2fr"],
+  section [style*="grid-template-columns:0.9fr 1.1fr"],
+  section [style*="grid-template-columns:1fr 1.15fr"],
+  section [style*="grid-template-columns:1.2fr 1.6fr"],
+  section [style*="grid-template-columns:1.3fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* === HERO === */
+  section#top h1.y-display-xl {
+    max-width: 100% !important;
+  }
+  /* Hero metrics 3-col stays compact */
+  section#top [style*="grid-template-columns:repeat(3, 1fr)"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  section#top [style*="repeat(3, 1fr)"] > div {
+    padding: 14px 12px !important;
+  }
+  /* Shrink the big metric numbers */
+  section#top [style*="font-size:44px"] {
+    font-size: 22px !important;
+  }
+  /* CTA buttons full width on tiny screens */
+  section#top a[href="#waitlist"],
+  section#top a[href="#how"] {
+    flex: 1 1 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* === PROBLEM (hub-and-spokes) === */
+  /* The 1fr auto 1fr hub layout: stack vertically, center everything */
+  section#problem [style*="grid-template-columns:1fr auto 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  section#problem [style*="grid-template-columns:1fr auto 1fr"] > div {
+    align-items: center !important;
+  }
+  /* Pills wrap nicely */
+  section#problem [style*="grid-template-columns:1fr auto 1fr"] > div[style*="flex-direction:column"] {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  /* Hub circle smaller */
+  section#problem [style*="width:260px"][style*="height:260px"] {
+    width: 220px !important;
+    height: 220px !important;
+  }
+  /* Inner card with radial gradient — smaller padding */
+  section#problem [style*="padding:56px 48px"] {
+    padding: 28px 20px !important;
+  }
+  /* Headline above hub — smaller */
+  section#problem [style*="font-size:44px"] {
+    font-size: 26px !important;
+  }
+  /* Fragments grid (4 small problem cards) */
+  section#problem [style*="grid-template-columns:repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* === HOW IT WORKS === */
+  section#how [style*="grid-template-columns:repeat(4, 1fr)"] > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 28px 0 !important;
+  }
+  section#how [style*="grid-template-columns:repeat(4, 1fr)"] > div:last-child {
+    border-bottom: none !important;
+  }
+  /* Step number font shrinks */
+  section#how [style*="font-size:72px"] {
+    font-size: 56px !important;
+  }
+
+  /* === PULSE AI === */
+  /* AI mock card */
+  section#ai [style*="min-height:540px"] {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+  /* Skills 2-col within right side */
+  section#ai [style*="repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  section#ai [style*="repeat(2, 1fr)"] > div {
+    border-right: none !important;
+    padding-left: 0 !important;
+    padding: 18px 0 !important;
+  }
+
+  /* === DOCTOR ON RECORD === */
+  section#doctor [style*="min-height:560px"] {
+    min-height: auto !important;
+    padding: 18px !important;
+  }
+  /* Internal patient context grid */
+  section#doctor [style*="grid-template-columns:repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Flagged biomarker rows: keep grid but tighten */
+  section#doctor [style*="grid-template-columns:1.4fr 1fr 1fr auto"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+  /* Bottom action bar wraps */
+  section#doctor [style*="border-radius:14px"][style*="padding:12px 16px"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+  /* Stat strip 3-col */
+  section#doctor [style*="grid-template-columns:repeat(3, 1fr)"] > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 20px 0 !important;
+  }
+
+  /* === EXPERTS === */
+  /* Stat strip → stacked */
+  section#experts [style*="grid-template-columns:repeat(3, 1fr)"] > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 20px 0 !important;
+  }
+  section#experts [style*="grid-template-columns:repeat(3, 1fr)"] > div:last-child {
+    border-bottom: none !important;
+  }
+  /* Doctor cards 4-col → 2-col */
+  section#experts [style*="grid-template-columns:repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  section#experts [style*="repeat(4, 1fr)"] [style*="font-size:96px"] {
+    font-size: 56px !important;
+  }
+
+  /* === FAMILY === */
+  /* Member cards 4-col → 2-col */
+  section#family [style*="grid-template-columns:repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+  /* Member card: stack avatar above name to avoid name truncation */
+  section#family .member-card-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  section#family .member-card-avatar {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 18px !important;
+  }
+  section#family .member-card-name {
+    font-size: 14px !important;
+    flex-wrap: wrap !important;
+  }
+  /* Stack number + label vertically inside metric */
+  section#family .member-card-metric {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+  }
+  section#family .member-card-metric .member-card-panels {
+    font-size: 22px !important;
+  }
+  section#family .member-card-metric .member-card-panels-label {
+    font-size: 9.5px !important;
+  }
+  /* Feature columns */
+  section#family [style*="grid-template-columns:repeat(3, 1fr)"] > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 24px 0 !important;
+  }
+  section#family [style*="grid-template-columns:repeat(3, 1fr)"] > div:last-child {
+    border-bottom: none !important;
+  }
+  /* Household card padding */
+  section#family [style*="padding:32px 32px 28px"] {
+    padding: 20px 16px !important;
+  }
+
+  /* === PRICING === */
+  /* Two-tier already handled by 1fr 1fr collapse above */
+  /* Tier card padding */
+  section#pricing [style*="padding:32px 32px 28px"] {
+    padding: 26px 22px !important;
+  }
+  section#pricing [style*="font-size:64px"] {
+    font-size: 44px !important;
+  }
+
+  /* === INSIDE PULSE CARE (bundle table) === */
+  /* Hide table header row on mobile */
+  section#pulse-care .bundle-header {
+    display: none !important;
+  }
+  /* Each row → stacked */
+  section#pulse-care .bundle-row {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 18px 18px !important;
+  }
+  section#pulse-care .bundle-row .bundle-feature {
+    font-size: 16px !important;
+  }
+  section#pulse-care .bundle-row .bundle-detail {
+    font-size: 13.5px !important;
+  }
+  section#pulse-care .bundle-row .bundle-price {
+    text-align: left !important;
+    font-size: 14px !important;
+  }
+  /* Hide empty (—) price rows on mobile to reduce clutter */
+  section#pulse-care .bundle-price-empty {
+    display: none !important;
+  }
+  /* Programmes band 3-col */
+  section#pulse-care [style*="grid-template-columns:repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Bottom CTA card */
+  section#pulse-care [style*="padding:24px 28px"] {
+    padding: 20px 18px !important;
+  }
+  section#pulse-care [style*="padding:24px 28px"][style*="border-radius:20px"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    text-align: center !important;
+  }
+  section#pulse-care [style*="font-size:32px"] {
+    font-size: 26px !important;
+  }
+  /* Big inside-pulse-care headline shrinks more */
+  section#pulse-care .y-display-md {
+    font-size: clamp(26px, 7vw, 38px) !important;
+  }
+
+  /* === TRUST === */
+  section#trust [style*="grid-template-columns:repeat(5, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+  }
+  section#trust [style*="padding:24px 28px"] {
+    padding: 20px 16px !important;
+  }
+
+  /* === FAQ === */
+  section#faq [style*="grid-template-columns:1fr 2fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  section#faq button {
+    padding: 22px 0 !important;
+    gap: 16px !important;
+  }
+  section#faq button > span:first-child {
+    font-size: 18px !important;
+  }
+
+  /* === NAV === */
+  nav {
+    padding: 10px 14px 10px 16px !important;
+    max-width: calc(100% - 16px) !important;
+  }
+  nav .nav-links {
+    display: none !important;
+  }
+  nav .nav-uae {
+    display: none !important;
+  }
+  nav .nav-signin {
+    display: none !important;
+  }
+  nav .nav-brand-tag {
+    display: none !important;
+  }
+  nav [class*="brand"] [style*="font-size:36px"] {
+    font-size: 26px !important;
+  }
+  nav a[href="#waitlist"] {
+    padding: 9px 14px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Tablet adjustments — collapse 5-col Trust earlier */
+@media (max-width: 1024px) and (min-width: 769px) {
+  section#trust [style*="grid-template-columns:repeat(5, 1fr)"] {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  section [style*="grid-template-columns:repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }

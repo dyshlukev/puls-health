@@ -33,6 +33,7 @@ export function Nav() {
     >
       <a
         href="#top"
+        className="nav-brand"
         style={{ display: "inline-flex", alignItems: "baseline", gap: 10, textDecoration: "none" }}
       >
         <span
@@ -49,6 +50,7 @@ export function Nav() {
           PULSE
         </span>
         <span
+          className="nav-brand-tag"
           style={{
             fontFamily: "var(--font-serif)",
             fontSize: 13,
@@ -60,7 +62,7 @@ export function Nav() {
         </span>
       </a>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
+      <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 22 }}>
         <a href="#problem" style={linkStyle}>
           Why Pulse
         </a>
@@ -87,8 +89,9 @@ export function Nav() {
         </a>
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+      <div className="nav-right" style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <span
+          className="nav-uae"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -105,7 +108,9 @@ export function Nav() {
         >
           🇦🇪 UAE
         </span>
-        <SignInGate />
+        <div className="nav-signin" style={{ display: "inline-flex", alignItems: "center" }}>
+          <SignInGate />
+        </div>
         <a
           href="#waitlist"
           style={{

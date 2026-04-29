@@ -71,8 +71,9 @@ function MemberCard({ m }: { m: Member }) {
         gap: 14,
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+      <div className="member-card-head" style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <div
+          className="member-card-avatar"
           style={{
             position: "relative",
             width: 52,
@@ -89,6 +90,7 @@ function MemberCard({ m }: { m: Member }) {
             fontSize: 22,
             letterSpacing: "-0.02em",
             border: "1px solid rgba(255,255,255,0.18)",
+            flexShrink: 0,
           }}
         >
           {m.initial}
@@ -109,6 +111,7 @@ function MemberCard({ m }: { m: Member }) {
         </div>
         <div style={{ minWidth: 0, flex: 1 }}>
           <div
+            className="member-card-name"
             style={{
               fontWeight: 700,
               fontSize: 15,
@@ -141,6 +144,7 @@ function MemberCard({ m }: { m: Member }) {
 
       <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
         <div
+          className="member-card-metric"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -148,6 +152,7 @@ function MemberCard({ m }: { m: Member }) {
           }}
         >
           <div
+            className="member-card-panels"
             style={{
               fontFamily: "var(--font-headline)",
               fontWeight: 900,
@@ -161,6 +166,7 @@ function MemberCard({ m }: { m: Member }) {
             {m.panels}
           </div>
           <div
+            className="member-card-panels-label"
             style={{
               fontSize: 10.5,
               color: "rgba(255,255,255,0.45)",

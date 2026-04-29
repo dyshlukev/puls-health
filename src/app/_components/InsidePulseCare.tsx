@@ -135,6 +135,7 @@ export function InsidePulseCare() {
           }}
         >
           <div
+            className="bundle-header"
             style={{
               display: "grid",
               gridTemplateColumns: "1.4fr 1.6fr 0.7fr",
@@ -156,6 +157,7 @@ export function InsidePulseCare() {
           {BUNDLE.map((b, i) => (
             <div
               key={b.feature}
+              className="bundle-row"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1.4fr 1.6fr 0.7fr",
@@ -169,6 +171,7 @@ export function InsidePulseCare() {
               }}
             >
               <div
+                className="bundle-feature"
                 style={{
                   fontFamily: "var(--font-text)",
                   fontWeight: 600,
@@ -180,6 +183,7 @@ export function InsidePulseCare() {
                 {b.feature}
               </div>
               <div
+                className="bundle-detail"
                 style={{
                   color: "rgba(255,255,255,0.62)",
                   fontFamily: "var(--font-serif)",
@@ -189,6 +193,7 @@ export function InsidePulseCare() {
                 {b.detail}
               </div>
               <div
+                className={`bundle-price${!b.unbundled || b.unbundled === "—" ? " bundle-price-empty" : ""}`}
                 style={{
                   textAlign: "right",
                   color:
