@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
-const DEMO_URL = "https://yandex-puls-demo.vercel.app";
+const DEMO_URL = "https://pulse-health-app-demo-i5oeruprm-dyshlukevs-projects.vercel.app/";
 const DEMO_CODE = "OneLife";
 
 const linkStyle: React.CSSProperties = {
