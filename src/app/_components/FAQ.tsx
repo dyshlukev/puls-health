@@ -19,6 +19,26 @@ const FAQS: QA[] = [
     ],
   },
   {
+    q: "Where do you operate, and what hours?",
+    lead: "We launch in the UAE first — Dubai and Abu Dhabi, with home-draw windows from early to late.",
+    bullets: [
+      "Home draws across Dubai and Abu Dhabi · 7 days a week, 06:00–22:00",
+      "Other emirates available via partner-lab walk-in collection points",
+      "Ramadan-fasting bookings: same-day pre-Suhoor and post-Iftar slots — pick at booking",
+      "Doctor messaging on Pulse Care: replies within working hours (4 hrs typical), urgent flags re-routed",
+    ],
+  },
+  {
+    q: "Does insurance cover this?",
+    lead: "Pulse is a cash-pay product today, but your insurer will often reimburse — we make the paperwork painless.",
+    bullets: [
+      "We issue an itemised invoice with DHA/DOH codes — accepted by Daman, NAS, Bupa, Cigna, AXA",
+      "Most members claim back 50–100% on direct-bill PPOs · check your plan's lab benefit",
+      "Pulse Care subscription is not currently insurance-billed; the panels inside are reimbursable",
+      "Have a corporate plan? We can confirm coverage before your first draw",
+    ],
+  },
+  {
     q: "Where does my data live, and who owns it?",
     lead: "Your record is yours. In-region, encrypted, exportable, never sold.",
     bullets: [
@@ -31,8 +51,8 @@ const FAQS: QA[] = [
     q: "How does pricing work?",
     lead: "Two ways to use Pulse — one-time, or membership.",
     bullets: [
-      "Buy panels from AED 499 — your record stays on the app forever, no recurring charges",
-      "Or subscribe to Pulse Care at AED 599/month for an always-on doctor on your record, panels included",
+      "Buy panels from AED 240 — your record stays on the app forever, no recurring charges",
+      "Or subscribe to Pulse Care at AED 550/month (7-day free trial) for an always-on doctor on your record, panels included",
       "No hidden add-ons either way",
     ],
   },

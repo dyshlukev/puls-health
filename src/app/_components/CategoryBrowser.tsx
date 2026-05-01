@@ -36,7 +36,7 @@ const CATS: Cat[] = [
   {
     name: "Women's Health",
     hook: "Irregular cycle, mood swings, hair loss.",
-    price: "AED 599",
+    price: "AED 460",
     hues: [340, 10],
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round">
@@ -48,8 +48,8 @@ const CATS: Cat[] = [
   },
   {
     name: "Men's Health",
-    hook: "Low energy. Drive not what it was.",
-    price: "AED 549",
+    hook: "Energy off. Recovery slow. Hair thinning.",
+    price: "AED 460",
     hues: [210, 235],
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round">
@@ -62,7 +62,7 @@ const CATS: Cat[] = [
   {
     name: "Heart Health",
     hook: "Family history. Stay ahead of it.",
-    price: "AED 499",
+    price: "AED 290",
     hues: [0, 22],
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +74,7 @@ const CATS: Cat[] = [
   {
     name: "Weight & Metabolic",
     hook: "Scale won't move, even trying.",
-    price: "AED 699",
+    price: "AED 540",
     hues: [48, 72],
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round" strokeLinejoin="round">
@@ -88,7 +88,7 @@ const CATS: Cat[] = [
   {
     name: "Thyroid",
     hook: "Tired, cold, weight creeping up.",
-    price: "AED 399",
+    price: "AED 240",
     hues: [170, 190],
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round" strokeLinejoin="round">
@@ -109,7 +109,7 @@ const CATS: Cat[] = [
   {
     name: "Hormones",
     hook: "Off-balance. Not sure why.",
-    price: "AED 649",
+    price: "AED 460",
     hues: [285, 315],
     icon: (
       <g fill="none" stroke={IW} strokeWidth={IS} strokeLinecap="round">

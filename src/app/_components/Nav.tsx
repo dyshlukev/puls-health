@@ -69,20 +69,14 @@ export function Nav() {
         <a href="#how" style={linkStyle}>
           How it works
         </a>
-        <a href="#ai" style={linkStyle}>
-          Pulse AI
-        </a>
-        <a href="#doctor" style={linkStyle}>
-          Doctor
-        </a>
-        <a href="#family" style={linkStyle}>
-          Family
+        <a href="#product" style={linkStyle}>
+          Product
         </a>
         <a href="#pricing" style={linkStyle}>
           Pricing
         </a>
-        <a href="#pulse-care" style={linkStyle}>
-          Pulse Care
+        <a href="#family" style={linkStyle}>
+          Family
         </a>
         <a href="#faq" style={linkStyle}>
           FAQ

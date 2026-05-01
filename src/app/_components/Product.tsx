@@ -1,4 +1,4 @@
-export function DoctorOnRecord() {
+export function Product() {
   const accent = "var(--pulse-accent)";
 
   const flagged: { name: string; value: string; range: string; trend: "up" | "down" | "flat"; status: "watch" | "ok" }[] = [
@@ -8,9 +8,18 @@ export function DoctorOnRecord() {
     { name: "TSH", value: "2.1 mIU/L", range: "0.4–4.0", trend: "flat", status: "ok" },
   ];
 
+  const aiSkills: [string, string][] = [
+    ["Retest scheduling", "Same nurse, same lab, same window"],
+    ["Specialist routing", "Right clinician, context pre-shared"],
+    ["Supplements", "Suggestions grounded in your results"],
+    ["Annual calendar", "A year of screenings, mapped to you"],
+    ["Wearables", "Apple Health, Whoop, Oura — unified profile"],
+    ["Doctor briefing", "Trend + flagged values before the call"],
+  ];
+
   return (
     <section
-      id="doctor"
+      id="product"
       style={{
         position: "relative",
         padding: "140px 5vw",
@@ -38,7 +47,7 @@ export function DoctorOnRecord() {
               fontStyle: "italic",
             }}
           >
-            doctor on your record
+            your record
           </span>
           <span
             style={{
@@ -51,13 +60,13 @@ export function DoctorOnRecord() {
               color: "rgba(255,255,255,0.7)",
             }}
           >
-            Pulse Care
+            AI + Doctor
           </span>
         </div>
         <h2 className="y-display-md" style={{ margin: "0 0 24px", maxWidth: "20ch" }}>
-          Ask anything.
+          AI reads it.
           <br />
-          <span style={{ color: accent }}>A doctor with your full record answers — in minutes.</span>
+          <span style={{ color: accent }}>A doctor signs every answer.</span>
         </h2>
         <p
           style={{
@@ -69,12 +78,13 @@ export function DoctorOnRecord() {
             margin: "0 0 64px",
           }}
         >
-          When your doctor opens your message, they already see every result, every wearable
-          trend, and what you tried last quarter. No re-explaining. No 30-minute appointments to
-          establish context.
+          Pulse AI grounds every reply in your labs, wearables, and history — not the internet.
+          A licensed physician signs off on anything that touches your care, with your full
+          trend already in front of them.
         </p>
 
         <div
+          className="product-split"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1.15fr",
@@ -106,10 +116,7 @@ export function DoctorOnRecord() {
                 borderBottom: "1px solid rgba(255,255,255,0.08)",
               }}
             >
-              <div
-                className="y-label"
-                style={{ color: "rgba(255,255,255,0.5)" }}
-              >
+              <div className="y-label" style={{ color: "rgba(255,255,255,0.5)" }}>
                 Your view
               </div>
               <div
@@ -139,6 +146,66 @@ export function DoctorOnRecord() {
                 I&apos;ve been more tired than usual since Ramadan. Worth checking anything?
               </div>
 
+              {/* AI first pass — labeled */}
+              <div
+                style={{
+                  alignSelf: "flex-start",
+                  maxWidth: "92%",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 8,
+                    fontSize: 11,
+                    color: "rgba(255,255,255,0.55)",
+                    paddingLeft: 4,
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 22,
+                      height: 22,
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, #fff, rgba(255,255,255,0.3))",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "#000",
+                      fontFamily: "var(--font-headline)",
+                      fontStyle: "italic",
+                      fontWeight: 900,
+                      fontSize: 10,
+                    }}
+                  >
+                    P
+                  </div>
+                  <span style={{ fontWeight: 600, color: "rgba(255,255,255,0.8)" }}>Pulse AI</span>
+                  <span>· first pass · awaiting doctor sign-off</span>
+                </div>
+                <div
+                  style={{
+                    background: "rgba(0,0,0,0.35)",
+                    color: "rgba(255,255,255,0.78)",
+                    padding: "12px 16px",
+                    borderRadius: "16px 16px 16px 4px",
+                    fontSize: 13.5,
+                    lineHeight: 1.5,
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    fontStyle: "italic",
+                  }}
+                >
+                  Two flags from your record: Vitamin D dropped from 32 → 21 since October, and
+                  Whoop sleep averages 5h 40m for 3 weeks. Both fit fatigue. Suggesting a Vitamin D
+                  protocol — sending to Dr. Amira to confirm.
+                </div>
+              </div>
+
+              {/* Doctor reply */}
               <div
                 style={{
                   alignSelf: "flex-start",
@@ -190,13 +257,8 @@ export function DoctorOnRecord() {
                     border: "1px solid rgba(255,255,255,0.08)",
                   }}
                 >
-                  I&apos;ve looked at your record. Two things stand out: your Vitamin D dropped
-                  from 32 in October to 21 today, and your sleep on Whoop has averaged 5h 40m for
-                  three weeks. Both fit the fatigue.
-                  <br />
-                  <br />
-                  Let&apos;s start with Vitamin D — I&apos;m sending a 10,000 IU protocol for 8
-                  weeks, then we retest. If sleep doesn&apos;t improve in 2 weeks, ping me again.
+                  Confirmed. Vitamin D 10,000 IU for 8 weeks, then we retest. If sleep
+                  doesn&apos;t improve in 2 weeks, ping me again — we&apos;ll add cortisol.
                 </div>
               </div>
 
@@ -225,19 +287,6 @@ export function DoctorOnRecord() {
                 <span style={{ color: "rgba(255,255,255,0.85)" }}>
                   Protocol added · retest scheduled · 8 weeks
                 </span>
-              </div>
-
-              <div
-                style={{
-                  alignSelf: "flex-end",
-                  maxWidth: "55%",
-                  background: "rgba(255,255,255,0.14)",
-                  padding: "12px 16px",
-                  borderRadius: "16px 16px 4px 16px",
-                  fontSize: 14,
-                }}
-              >
-                Thanks doc 🙏
               </div>
             </div>
           </div>
@@ -278,10 +327,7 @@ export function DoctorOnRecord() {
                 borderBottom: "1px solid rgba(255,255,255,0.12)",
               }}
             >
-              <div
-                className="y-label"
-                style={{ color: "rgba(255,255,255,0.7)" }}
-              >
+              <div className="y-label" style={{ color: "rgba(255,255,255,0.7)" }}>
                 Doctor&apos;s view · Pulse Care
               </div>
               <div
@@ -302,7 +348,7 @@ export function DoctorOnRecord() {
                     background: "#36C28E",
                   }}
                 />
-                Briefing pre-loaded
+                AI briefing pre-loaded
               </div>
             </div>
 
@@ -540,6 +586,65 @@ export function DoctorOnRecord() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div style={{ marginTop: 64 }}>
+          <div
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: 14,
+              color: "rgba(255,255,255,0.5)",
+              marginBottom: 18,
+              fontStyle: "italic",
+            }}
+          >
+            what pulse ai does between messages
+          </div>
+          <div
+            className="product-skills"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 0,
+              borderTop: "1px solid rgba(255,255,255,0.1)",
+            }}
+          >
+            {aiSkills.map((s, i) => (
+              <div
+                key={s[0]}
+                style={{
+                  padding: "22px 24px 22px 0",
+                  paddingLeft: i % 3 === 0 ? 0 : 24,
+                  borderBottom: "1px solid rgba(255,255,255,0.08)",
+                  borderRight: i % 3 < 2 ? "1px solid rgba(255,255,255,0.08)" : "none",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 8,
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-text)",
+                    fontWeight: 700,
+                    fontSize: 18,
+                    letterSpacing: "-0.01em",
+                    color: "#fff",
+                  }}
+                >
+                  {s[0]}
+                </div>
+                <div
+                  style={{
+                    fontSize: 14,
+                    color: "rgba(255,255,255,0.6)",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {s[1]}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
