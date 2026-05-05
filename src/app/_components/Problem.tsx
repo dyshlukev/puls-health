@@ -3,12 +3,9 @@ type IOKind =
   | "wearable"
   | "history"
   | "rx"
-  | "family"
   | "doctor"
   | "calendar"
-  | "supplements"
-  | "specialist"
-  | "care";
+  | "supplements";
 
 function IOIcon({ k }: { k: IOKind }) {
   const s = {
@@ -46,14 +43,6 @@ function IOIcon({ k }: { k: IOKind }) {
         <path d="M7 4h6a3 3 0 010 6H7zM7 10v10M7 13l8 7" />
       </svg>
     );
-  if (k === "family")
-    return (
-      <svg {...s} viewBox="0 0 24 24">
-        <circle cx="8" cy="9" r="2.5" />
-        <circle cx="16" cy="9" r="2.5" />
-        <path d="M3 20c0-2.5 2-4 5-4s5 1.5 5 4M11 20c0-2.5 2-4 5-4s5 1.5 5 4" />
-      </svg>
-    );
   if (k === "doctor")
     return (
       <svg {...s} viewBox="0 0 24 24">
@@ -74,13 +63,6 @@ function IOIcon({ k }: { k: IOKind }) {
       <svg {...s} viewBox="0 0 24 24">
         <rect x="4" y="9" width="16" height="6" rx="3" transform="rotate(-25 12 12)" />
         <path d="M9 8l6 6" transform="rotate(-25 12 12)" />
-      </svg>
-    );
-  if (k === "specialist")
-    return (
-      <svg {...s} viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M6.3 17.7l2.1-2.1M15.6 8.4l2.1-2.1" />
       </svg>
     );
   return (
@@ -155,14 +137,11 @@ export function Problem() {
     { k: "wearable", label: "Wearables, CGM" },
     { k: "history", label: "DHA medical history" },
     { k: "rx", label: "Prescriptions" },
-    { k: "family", label: "Family context" },
   ];
   const outputs: { k: IOKind; label: string }[] = [
     { k: "doctor", label: "Doctor answers" },
     { k: "calendar", label: "Retest calendar" },
     { k: "supplements", label: "Protocol + supplements" },
-    { k: "specialist", label: "Specialist routing" },
-    { k: "care", label: "Pulse Care concierge" },
   ];
 
   return (

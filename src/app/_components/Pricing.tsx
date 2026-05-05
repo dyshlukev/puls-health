@@ -1,84 +1,5 @@
 import { CategoryBrowser } from "./CategoryBrowser";
 
-type Bundle = {
-  feature: string;
-  detail: string;
-  unbundled?: string;
-};
-
-type Programme = {
-  name: string;
-  tagline: string;
-  palette: "ember" | "azure" | "magenta";
-};
-
-const PROGRAMMES: Programme[] = [
-  {
-    name: "Weight",
-    tagline: "Metabolic panel + GLP-1 protocol + monthly tracking",
-    palette: "ember",
-  },
-  {
-    name: "Men's Health",
-    tagline: "Testosterone, energy, hair, performance — monitored",
-    palette: "azure",
-  },
-  {
-    name: "Women's Health",
-    tagline: "PCOS, perimenopause, thyroid — supervised by a specialist",
-    palette: "magenta",
-  },
-];
-
-const PROGRAMME_PALETTES: Record<Programme["palette"], string> = {
-  ember: "linear-gradient(135deg, #D94A2A 0%, #4A0E06 100%)",
-  azure: "linear-gradient(135deg, #2F6BB8 0%, #0E2A4A 100%)",
-  magenta: "linear-gradient(135deg, #B24A80 0%, #4A1D34 100%)",
-};
-
-const BUNDLE: Bundle[] = [
-  {
-    feature: "2 panels per year",
-    detail: "Drawn at home · base + targeted retests",
-    unbundled: "AED 800/yr",
-  },
-  {
-    feature: "Doctor on your record",
-    detail: "Unlimited messages · median reply 5 min",
-    unbundled: "AED 18,000/yr",
-  },
-  {
-    feature: "Pulse AI",
-    detail: "Trained on your full history · safe-mode answers",
-    unbundled: "—",
-  },
-  {
-    feature: "Wearable + CGM connection",
-    detail: "Apple Health, Whoop, Oura, Dexcom, Libre",
-    unbundled: "—",
-  },
-  {
-    feature: "DHA medical history import",
-    detail: "10 years of records via UAE Pass · one tap",
-    unbundled: "—",
-  },
-  {
-    feature: "Retest calendar, auto-scheduled",
-    detail: "Same nurse, same window, same lab",
-    unbundled: "—",
-  },
-  {
-    feature: "Specialist routing",
-    detail: "Cardio, endo, OB-GYN · your record pre-shared",
-    unbundled: "AED 600/visit saved",
-  },
-  {
-    feature: "Family add-on pricing",
-    detail: "Add a spouse, kid, or parent · one bill",
-    unbundled: "—",
-  },
-];
-
 export function Pricing() {
   const accent = "var(--pulse-accent)";
 
@@ -96,10 +17,10 @@ export function Pricing() {
         >
           pricing
         </div>
-        <h2 className="y-display-md" style={{ margin: "0 0 20px", maxWidth: "20ch" }}>
-          Two ways to use Pulse.
+        <h2 className="y-display-md" style={{ margin: "0 0 20px", maxWidth: "22ch" }}>
+          A panel.
           <br />
-          <span style={{ color: accent }}>Your record, either way.</span>
+          <span style={{ color: accent }}>Then your protocol.</span>
         </h2>
         <p
           style={{
@@ -110,8 +31,8 @@ export function Pricing() {
             margin: "0 0 48px",
           }}
         >
-          Buy panels one at a time, or join Pulse Care for an always-on doctor and panels included.
-          Either way, every result stays on your record forever.
+          Take a 5-minute assessment. Pay for the panel it recommends. After your results, a
+          doctor-reviewed supplement protocol — buy once, or set up monthly renewal.
         </p>
 
         <div
@@ -138,7 +59,7 @@ export function Pricing() {
           >
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div className="y-label" style={{ color: "rgba(255,255,255,0.55)" }}>
-                Packages
+                Step 1 · Test
               </div>
               <div
                 style={{
@@ -238,7 +159,7 @@ export function Pricing() {
             </a>
           </div>
 
-          {/* PULSE CARE TIER */}
+          {/* SUPPLEMENTS TIER */}
           <div
             style={{
               position: "relative",
@@ -273,7 +194,7 @@ export function Pricing() {
               }}
             >
               <div className="y-label" style={{ color: "#fff" }}>
-                Pulse Care
+                Step 2 · Supplements
               </div>
               <div
                 style={{
@@ -288,7 +209,7 @@ export function Pricing() {
                   border: "1px solid rgba(255,255,255,0.25)",
                 }}
               >
-                7-day free trial
+                After your test
               </div>
             </div>
 
@@ -312,10 +233,10 @@ export function Pricing() {
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  AED 550
+                  AED 80
                 </div>
                 <div style={{ fontSize: 14, color: "rgba(255,255,255,0.7)" }}>
-                  /month
+                  · from / month per SKU
                 </div>
               </div>
               <div
@@ -326,18 +247,16 @@ export function Pricing() {
                   fontStyle: "italic",
                 }}
               >
-                A doctor on your side, every day
+                Built from your results, doctor-reviewed.
               </div>
             </div>
 
             <div style={{ position: "relative", display: "flex", flexDirection: "column", gap: 10 }}>
               {[
-                "2 panels per year — drawn at home",
-                "Doctor on your record · answers in minutes",
-                "Pulse AI · trained on your full history",
-                "Wearable + CGM · Apple Health, Whoop, Oura",
-                "Specialist routing with your record pre-shared",
-                "Family add-ons · one bill, one app",
+                "Recommended after your panel results",
+                "Doctor-reviewed protocol — never generic",
+                "Buy once, or set up monthly renewal",
+                "Adjusted at every 6-month retest",
               ].map((f) => (
                 <div
                   key={f}
@@ -357,7 +276,7 @@ export function Pricing() {
             </div>
 
             <a
-              href="#waitlist"
+              href="#packages"
               style={{
                 position: "relative",
                 marginTop: "auto",
@@ -372,7 +291,7 @@ export function Pricing() {
                 textAlign: "center",
               }}
             >
-              Start 7-day free trial
+              Start with your panel →
             </a>
           </div>
         </div>
@@ -465,223 +384,6 @@ export function Pricing() {
           </div>
         </div>
 
-        {/* WHAT PULSE CARE INCLUDES — bundle table */}
-        <div style={{ marginBottom: 48 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              flexWrap: "wrap",
-              gap: 16,
-              marginBottom: 18,
-            }}
-          >
-            <div>
-              <div className="y-label" style={{ color: "rgba(255,255,255,0.55)" }}>
-                What Pulse Care includes
-              </div>
-              <div
-                style={{
-                  marginTop: 6,
-                  fontFamily: "var(--font-serif)",
-                  fontSize: 15,
-                  fontStyle: "italic",
-                  color: "rgba(255,255,255,0.5)",
-                }}
-              >
-                Concierge medicine usually starts at AED 25,000 a year. Pulse Care: AED 6,600.
-              </div>
-            </div>
-          </div>
-          <div
-            style={{
-              position: "relative",
-              borderRadius: 28,
-              overflow: "hidden",
-              background: "rgba(255,255,255,0.025)",
-              border: "1px solid rgba(255,255,255,0.08)",
-            }}
-          >
-            <div
-              className="bundle-header"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1.4fr 1.6fr 0.7fr",
-                padding: "16px 28px",
-                borderBottom: "1px solid rgba(255,255,255,0.08)",
-                background: "rgba(255,255,255,0.02)",
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.5)",
-              }}
-            >
-              <div>What you get</div>
-              <div>Detail</div>
-              <div style={{ textAlign: "right" }}>If you bought it separately</div>
-            </div>
-
-            {BUNDLE.map((b, i) => (
-              <div
-                key={b.feature}
-                className="bundle-row"
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1.4fr 1.6fr 0.7fr",
-                  alignItems: "center",
-                  padding: "20px 28px",
-                  background:
-                    i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)",
-                  borderBottom:
-                    i < BUNDLE.length - 1 ? "1px solid rgba(255,255,255,0.05)" : "none",
-                  fontSize: 15,
-                }}
-              >
-                <div
-                  className="bundle-feature"
-                  style={{
-                    fontFamily: "var(--font-text)",
-                    fontWeight: 600,
-                    color: "#fff",
-                    letterSpacing: "-0.01em",
-                    fontSize: 16,
-                  }}
-                >
-                  {b.feature}
-                </div>
-                <div
-                  className="bundle-detail"
-                  style={{
-                    color: "rgba(255,255,255,0.62)",
-                    fontFamily: "var(--font-serif)",
-                    lineHeight: 1.4,
-                  }}
-                >
-                  {b.detail}
-                </div>
-                <div
-                  className={`bundle-price${!b.unbundled || b.unbundled === "—" ? " bundle-price-empty" : ""}`}
-                  style={{
-                    textAlign: "right",
-                    color:
-                      b.unbundled && b.unbundled !== "—"
-                        ? "rgba(255,255,255,0.85)"
-                        : "rgba(255,255,255,0.3)",
-                    fontFamily:
-                      b.unbundled && b.unbundled !== "—"
-                        ? "var(--font-headline)"
-                        : "var(--font-text)",
-                    fontWeight:
-                      b.unbundled && b.unbundled !== "—" ? 900 : 400,
-                    fontStyle:
-                      b.unbundled && b.unbundled !== "—" ? "italic" : "normal",
-                    fontSize:
-                      b.unbundled && b.unbundled !== "—" ? 17 : 14,
-                    letterSpacing:
-                      b.unbundled && b.unbundled !== "—" ? "-0.01em" : "0",
-                  }}
-                >
-                  {b.unbundled || "—"}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* SPECIALIST PROGRAMMES */}
-        <div style={{ marginBottom: 64 }}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "baseline",
-              justifyContent: "space-between",
-              marginBottom: 18,
-            }}
-          >
-            <div className="y-label" style={{ color: "rgba(255,255,255,0.55)" }}>
-              Specialist programmes included
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontStyle: "italic",
-                fontSize: 14,
-                color: "rgba(255,255,255,0.45)",
-              }}
-            >
-              when one panel isn&apos;t enough
-            </div>
-          </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: 14,
-            }}
-          >
-            {PROGRAMMES.map((p) => (
-              <div
-                key={p.name}
-                style={{
-                  position: "relative",
-                  borderRadius: 18,
-                  overflow: "hidden",
-                  background: "rgba(255,255,255,0.025)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  display: "flex",
-                  alignItems: "stretch",
-                  minHeight: 96,
-                }}
-              >
-                <div
-                  style={{
-                    width: 8,
-                    background: PROGRAMME_PALETTES[p.palette],
-                    flexShrink: 0,
-                  }}
-                />
-                <div
-                  style={{
-                    padding: "18px 20px 18px 22px",
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 8,
-                    justifyContent: "center",
-                    flex: 1,
-                  }}
-                >
-                  <div
-                    style={{
-                      fontFamily: "var(--font-headline)",
-                      fontWeight: 900,
-                      fontStyle: "italic",
-                      textTransform: "uppercase",
-                      fontSize: 22,
-                      lineHeight: 1,
-                      color: "#fff",
-                      letterSpacing: "-0.015em",
-                    }}
-                  >
-                    {p.name}
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: 13.5,
-                      lineHeight: 1.4,
-                      color: "rgba(255,255,255,0.7)",
-                    }}
-                  >
-                    {p.tagline}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* CATEGORY BROWSER */}
         <div
           style={{
@@ -731,7 +433,7 @@ export function Pricing() {
                 letterSpacing: "-0.02em",
               }}
             >
-              AED 550 / month
+              Find your panel.
             </div>
             <div
               style={{
@@ -742,7 +444,7 @@ export function Pricing() {
                 fontStyle: "italic",
               }}
             >
-              7-day free trial. Cancel any time. Your record stays.
+              5-minute assessment recommends the right one. Or browse the catalogue.
             </div>
           </div>
           <a
@@ -761,7 +463,7 @@ export function Pricing() {
               gap: 10,
             }}
           >
-            Start 7-day free trial <span style={{ fontSize: 16, lineHeight: 1 }}>↗</span>
+            Start assessment <span style={{ fontSize: 16, lineHeight: 1 }}>↗</span>
           </a>
         </div>
       </div>

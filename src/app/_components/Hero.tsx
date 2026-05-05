@@ -154,9 +154,9 @@ export function Hero() {
                 maxWidth: "32ch",
               }}
             >
-              Curated lab packages, a personal health cabinet, and AI that reads your own
-              biomarkers — not Google, not a pasted-in PDF. Delivered to your door in 60–90
-              minutes.
+              A 5-minute assessment recommends your panel. A nurse draws blood at home. A doctor
+              explains every marker. Your supplement protocol is built from what your labs
+              actually say — not Google, not Instagram.
             </p>
             <div style={{ display: "flex", gap: 12, marginTop: 40, flexWrap: "wrap" }}>
               <a
@@ -198,8 +198,8 @@ export function Hero() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {[
+              { n: "5min", k: "assessment" },
               { n: "60min", k: "home draw" },
-              { n: "50+", k: "curated panels" },
               { n: "for life", k: "your record" },
             ].map((m) => (
               <div

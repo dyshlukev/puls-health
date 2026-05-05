@@ -49,11 +49,12 @@ const FAQS: QA[] = [
   },
   {
     q: "How does pricing work?",
-    lead: "Two ways to use Pulse — one-time, or membership.",
+    lead: "Take the assessment, then pay for what you actually need.",
     bullets: [
-      "Buy panels from AED 240 — your record stays on the app forever, no recurring charges",
-      "Or subscribe to Pulse Care at AED 550/month (7-day free trial) for an always-on doctor on your record, panels included",
-      "No hidden add-ons either way",
+      "Take a 5-minute assessment — recommends the right panel for you",
+      "Buy that panel from AED 240 — your record stays on the app forever",
+      "After your results, a doctor-reviewed supplement protocol — buy once, or set up monthly renewal",
+      "No subscription wrapper. No hidden add-ons.",
     ],
   },
   {

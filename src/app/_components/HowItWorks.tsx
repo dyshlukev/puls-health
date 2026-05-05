@@ -1,4 +1,4 @@
-type IconKind = "pick" | "draw" | "review" | "cal";
+type IconKind = "assess" | "draw" | "review" | "protocol";
 
 function StepIcon({ k }: { k: IconKind }) {
   const s = {
@@ -10,11 +10,12 @@ function StepIcon({ k }: { k: IconKind }) {
     strokeLinecap: "round" as const,
     strokeLinejoin: "round" as const,
   };
-  if (k === "pick")
+  if (k === "assess")
     return (
       <svg {...s} viewBox="0 0 28 28">
         <rect x="4" y="5" width="20" height="18" rx="3" />
-        <path d="M8 10h12M8 14h8M8 18h6" />
+        <circle cx="8" cy="10" r="1.4" fill="var(--pulse-accent)" stroke="none" />
+        <path d="M11 10h10M8 14h12M8 18h8" />
       </svg>
     );
   if (k === "draw")
@@ -32,8 +33,8 @@ function StepIcon({ k }: { k: IconKind }) {
     );
   return (
     <svg {...s} viewBox="0 0 28 28">
-      <rect x="4" y="6" width="20" height="18" rx="3" />
-      <path d="M4 11h20M10 4v4M18 4v4M9 17h2M14 17h2" />
+      <rect x="5" y="11" width="18" height="6" rx="3" transform="rotate(-25 14 14)" />
+      <path d="M10 10l8 8" transform="rotate(-25 14 14)" />
     </svg>
   );
 }
@@ -42,9 +43,9 @@ export function HowItWorks() {
   const steps: { n: string; t: string; ic: IconKind; d: string }[] = [
     {
       n: "01",
-      t: "Pick a panel",
-      ic: "pick",
-      d: "Around fifty curated packages — Base 30+, Male Health, Female Health, Weight Loss, Thyroid. Personalised suggestions from onboarding and your wearables.",
+      t: "Take the assessment",
+      ic: "assess",
+      d: "Five minutes — biographical, lifestyle, family history, what you're already taking. We recommend the right panel for you.",
     },
     {
       n: "02",
@@ -54,15 +55,15 @@ export function HowItWorks() {
     },
     {
       n: "03",
-      t: "A doctor reads your record",
+      t: "A doctor reads your results",
       ic: "review",
-      d: "A licensed physician sees your full trend, not just today's PDF. They answer in minutes, not days — because the context is already there.",
+      d: "A licensed physician explains every marker in plain English — no PDF dumped on you. Replies in minutes, not days.",
     },
     {
       n: "04",
-      t: "A plan that continues",
-      ic: "cal",
-      d: "Multi-year biomarker trends, retest reminders, and routing to the right specialist when something needs attention.",
+      t: "Your supplement protocol",
+      ic: "protocol",
+      d: "Built from your actual results, doctor-reviewed. Buy what you need once, or set up monthly renewal. Refreshed at every 6-month retest.",
     },
   ];
   return (

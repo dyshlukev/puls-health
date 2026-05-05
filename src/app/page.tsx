@@ -4,7 +4,6 @@ import { Problem } from "./_components/Problem";
 import { HowItWorks } from "./_components/HowItWorks";
 import { Product } from "./_components/Product";
 import { Experts } from "./_components/Experts";
-import { Family } from "./_components/Family";
 import { Pricing } from "./_components/Pricing";
 import { Trust } from "./_components/Trust";
 import { FAQ } from "./_components/FAQ";
@@ -19,7 +18,6 @@ export default function Home() {
       <HowItWorks />
       <Product />
       <Experts />
-      <Family />
       <Pricing />
       <Trust />
       <FAQ />

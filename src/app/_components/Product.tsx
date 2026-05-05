@@ -10,11 +10,11 @@ export function Product() {
 
   const aiSkills: [string, string][] = [
     ["Retest scheduling", "Same nurse, same lab, same window"],
-    ["Specialist routing", "Right clinician, context pre-shared"],
     ["Supplements", "Suggestions grounded in your results"],
     ["Annual calendar", "A year of screenings, mapped to you"],
     ["Wearables", "Apple Health, Whoop, Oura — unified profile"],
     ["Doctor briefing", "Trend + flagged values before the call"],
+    ["Plain-English results", "Every marker explained, not a PDF"],
   ];
 
   return (

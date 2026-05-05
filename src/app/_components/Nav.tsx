@@ -75,9 +75,6 @@ export function Nav() {
         <a href="#pricing" style={linkStyle}>
           Pricing
         </a>
-        <a href="#family" style={linkStyle}>
-          Family
-        </a>
         <a href="#faq" style={linkStyle}>
           FAQ
         </a>
