@@ -518,7 +518,7 @@ export function Product() {
               >
                 <div style={{ color: "rgba(255,255,255,0.7)" }}>
                   <span style={{ fontWeight: 600, color: "#fff" }}>Suggested next: </span>
-                  Vitamin D protocol · retest in 8 weeks · sleep recheck in 2
+                  {"Vitamin D protocol · retest in 8 weeks · sleep recheck in 2 weeks"}
                 </div>
                 <div
                   style={{
@@ -528,6 +528,8 @@ export function Product() {
                     color: "#000",
                     fontSize: 12,
                     fontWeight: 700,
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
                   }}
                 >
                   Send to patient
