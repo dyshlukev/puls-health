@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "pulse_health_landing",
+  "project_id": "303d7b03-1f66-4ead-be74-5415bd94db5b"
+}
