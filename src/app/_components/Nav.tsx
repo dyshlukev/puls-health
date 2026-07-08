@@ -1,126 +1,39 @@
-import { SignInGate } from "./SignInGate";
+import Link from "next/link";
+import { Wordmark } from "./Wordmark";
 
 export function Nav() {
-  const linkStyle: React.CSSProperties = {
-    color: "rgba(255,255,255,0.85)",
-    fontSize: 14,
-    textDecoration: "none",
-    cursor: "pointer",
-    lineHeight: 1,
-    fontWeight: 500,
-    letterSpacing: "-0.005em",
-  };
   return (
-    <nav
+    <header
       style={{
-        position: "fixed",
-        top: 16,
-        left: "50%",
-        transform: "translateX(-50%)",
+        position: "sticky",
+        top: 0,
         zIndex: 50,
-        width: "calc(100% - 32px)",
-        maxWidth: 1280,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "14px 20px 14px 24px",
-        background: "rgba(10,10,10,0.72)",
-        backdropFilter: "blur(24px) saturate(1.3)",
-        WebkitBackdropFilter: "blur(24px) saturate(1.3)",
-        border: "1px solid rgba(255,255,255,0.08)",
-        borderRadius: 999,
+        background: "rgba(255,255,255,.85)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        borderBottom: "1px solid var(--line)",
       }}
     >
-      <a
-        href="#top"
-        className="nav-brand"
-        style={{ display: "inline-flex", alignItems: "baseline", gap: 10, textDecoration: "none" }}
+      <div
+        className="wrap"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: 66,
+        }}
       >
-        <span
-          style={{
-            fontFamily: "var(--font-headline)",
-            fontWeight: 900,
-            fontStyle: "italic",
-            fontSize: 36,
-            letterSpacing: "-0.02em",
-            lineHeight: 1,
-            color: "#fff",
-          }}
-        >
-          PULSE
-        </span>
-        <span
-          className="nav-brand-tag"
-          style={{
-            fontFamily: "var(--font-serif)",
-            fontSize: 13,
-            color: "rgba(255,255,255,0.55)",
-            letterSpacing: "0.02em",
-          }}
-        >
-          by Yango
-        </span>
-      </a>
-
-      <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: 22 }}>
-        <a href="#problem" style={linkStyle}>
-          Why Pulse
-        </a>
-        <a href="#how" style={linkStyle}>
-          How it works
-        </a>
-        <a href="#product" style={linkStyle}>
-          Product
-        </a>
-        <a href="#pricing" style={linkStyle}>
-          Pricing
-        </a>
-        <a href="#faq" style={linkStyle}>
-          FAQ
-        </a>
+        <Link href="#top" aria-label="Пульс — на главную">
+          <Wordmark />
+        </Link>
+        <nav className="nav-links">
+          <a href="#how">Как это работает</a>
+          <a href="#programs">Программы</a>
+          <a href="#login" className="login">
+            Войти
+          </a>
+        </nav>
       </div>
-
-      <div className="nav-right" style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <span
-          className="nav-uae"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 6,
-            padding: "6px 10px",
-            borderRadius: 999,
-            border: "1px solid rgba(255,255,255,0.12)",
-            fontSize: 11,
-            color: "rgba(255,255,255,0.7)",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            fontWeight: 600,
-          }}
-        >
-          🇦🇪 UAE
-        </span>
-        <div className="nav-signin" style={{ display: "inline-flex", alignItems: "center" }}>
-          <SignInGate />
-        </div>
-        <a
-          href="#waitlist"
-          style={{
-            background: "#fff",
-            color: "#000",
-            border: "none",
-            borderRadius: 999,
-            padding: "10px 18px",
-            fontWeight: 600,
-            fontSize: 14,
-            cursor: "pointer",
-            lineHeight: 1,
-            textDecoration: "none",
-            fontFamily: "var(--font-text)",
-          }}
-        >
-          Join waitlist
-        </a>
-      </div>
-    </nav>
+    </header>
   );
 }
