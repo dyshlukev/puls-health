@@ -59,24 +59,43 @@ export function Features() {
             </a>
           </div>
           <div className="visual">
-            <div className="visual-card">
-              <div className="row">
-                <span className="nm">Витамин D · динамика</span>
-                <span className="spark">
-                  {[35, 50, 62, 80, 100].map((h, i) => (
-                    <i key={i} style={{ height: `${h}%` }} />
-                  ))}
-                </span>
+            <div className="visual-card trend-card">
+              <div className="trend-head">
+                <span className="trend-name">Витамин D</span>
+                <span className="trend-flag up">↑ вышел в норму</span>
               </div>
-              <div className="row">
-                <span className="nm">Ферритин · динамика</span>
-                <span className="spark">
-                  {[30, 45, 55, 70, 88].map((h, i) => (
-                    <i key={i} style={{ height: `${h}%` }} />
-                  ))}
-                </span>
+              <div className="trend-value">
+                42 <span>нг/мл</span>
               </div>
-              <div className="row">
+              <svg className="trend" viewBox="0 0 260 96" fill="none" preserveAspectRatio="none">
+                <path
+                  d="M10 68 L70 56 L130 40 L190 27 L250 16 L250 96 L10 96 Z"
+                  fill="var(--accent-soft)"
+                />
+                <path
+                  d="M10 68 L70 56 L130 40 L190 27 L250 16"
+                  stroke="var(--accent)"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                {[
+                  [10, 68],
+                  [70, 56],
+                  [130, 40],
+                  [190, 27],
+                  [250, 16],
+                ].map(([cx, cy], i) => (
+                  <circle key={i} cx={cx} cy={cy} r="3.4" fill="#fff" stroke="var(--accent)" strokeWidth="2" />
+                ))}
+              </svg>
+              <div className="trend-axis">
+                <span>Янв</span>
+                <span>Апр</span>
+                <span>Июл</span>
+                <span>Окт</span>
+              </div>
+              <div className="row trend-foot">
                 <span className="nm">Следующий ретест</span>
                 <span className="val" style={{ color: "var(--accent)" }}>
                   через 3 мес.
@@ -101,24 +120,29 @@ export function Features() {
             </a>
           </div>
           <div className="visual">
-            <div className="visual-card">
-              <div className="row">
+            <div className="visual-card ins-card">
+              <div className="ins-head">
+                <span className="ins-badge">А</span>
+                <div>
+                  <div className="ins-t">Направление: кардиолог</div>
+                  <div className="ins-s">Алиса проверила вашу ДМС</div>
+                </div>
+              </div>
+              <div className="ins-row">
+                <span className="ins-mark ok">✓</span>
                 <span className="nm">Приём кардиолога</span>
-                <span className="val">
-                  <span className="flag ok">Покрыто ДМС</span>
-                </span>
+                <span className="flag ok">Покрыто ДМС</span>
               </div>
-              <div className="row">
+              <div className="ins-row">
+                <span className="ins-mark no">₽</span>
                 <span className="nm">УЗИ сердца</span>
-                <span className="val">
-                  <span className="flag low">Из кармана</span>
-                </span>
+                <span className="flag low">Из кармана · 2 400 ₽</span>
               </div>
-              <div className="row">
-                <span className="nm">Клиника рядом · ★ 4.9</span>
-                <span className="val" style={{ color: "var(--accent)" }}>
-                  Записать
+              <div className="ins-cta">
+                <span className="ins-clinic">
+                  Клиника рядом <b>★ 4.9</b>
                 </span>
+                <span className="ins-book">Записать →</span>
               </div>
             </div>
           </div>

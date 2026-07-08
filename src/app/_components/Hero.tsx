@@ -35,8 +35,8 @@ export function Hero() {
             Не знаете, какие анализы сдать? <span className="hl">Алиса подберёт.</span>
           </h1>
           <p className="sub">
-            Ответьте на пару вопросов — и Алиса соберёт чекап под ваш возраст, пол и историю.
-            Только то, что действительно нужно сдать, без лишнего.
+            Пройдите опросник, составленный вместе с врачами — и Алиса соберёт чекап под ваш
+            возраст, пол и историю. Только то, что действительно нужно сдать, без лишнего.
           </p>
           <div className="hero-cta">
             <a href="#offer" className="btn btn-accent">
@@ -80,7 +80,7 @@ export function Hero() {
           </div>
           <div className="panel" style={{ animationDelay: "2.3s" }}>
             <div className="panel-h">
-              <span>Ваш чекап · Общее здоровье</span>
+              <span>Ваш чекап · Персональный</span>
               <span className="count">6 анализов</span>
             </div>
             {TESTS.map((t) => (
@@ -94,6 +94,18 @@ export function Hero() {
               <span className="pr">
                 <s>14 900 ₽</s>9 900 ₽
               </span>
+            </div>
+            <div className="panel-cta" style={{ animationDelay: "2.6s" }}>
+              Собрать чекап
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path
+                  d="M4 10h11M11 6l4 4-4 4"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
           </div>
         </div>

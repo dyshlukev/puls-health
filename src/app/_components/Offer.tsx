@@ -26,7 +26,7 @@ export function Offer() {
       <div className="wrap">
         <div className="offer">
           <div>
-            <h2>Что входит в «Общее здоровье»</h2>
+            <h2>Что входит в персональный ИИ-чекап</h2>
             <p className="lead">
               Вы платите за подбор, расшифровку и сопровождение — а не за лишние анализы.
             </p>
