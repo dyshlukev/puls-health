@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { BRAND, BRAND_COPY } from "../brand";
+
+const { name, owner } = BRAND_COPY[BRAND];
 
 export const metadata: Metadata = {
-  title: "Pulse — Preventive health, by Yango",
+  title: `${owner} ${name} — персональный ИИ-чекап`,
   description:
-    "Curated lab packages, a personal health cabinet, and AI that reads your own biomarkers. Home draw in 60–90 min across the UAE.",
+    "Ответьте на пару вопросов — и Алиса соберёт чекап под ваш возраст, пол и историю. Только нужные анализы, расшифровка простым языком и врач.",
 };
 
 export default function RootLayout({
@@ -13,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru" data-brand={BRAND}>
       <body>{children}</body>
     </html>
   );
