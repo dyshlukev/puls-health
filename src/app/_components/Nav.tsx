@@ -8,7 +8,7 @@ export function Nav() {
         position: "sticky",
         top: 0,
         zIndex: 50,
-        background: "rgba(255,255,255,.85)",
+        background: "rgba(254,252,248,.82)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
         borderBottom: "1px solid var(--line)",

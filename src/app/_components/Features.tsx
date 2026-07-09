@@ -70,11 +70,11 @@ export function Features() {
               <svg className="trend" viewBox="0 0 260 96" fill="none" preserveAspectRatio="none">
                 <path
                   d="M10 68 L70 56 L130 40 L190 27 L250 16 L250 96 L10 96 Z"
-                  fill="var(--accent-soft)"
+                  fill="var(--green-soft)"
                 />
                 <path
                   d="M10 68 L70 56 L130 40 L190 27 L250 16"
-                  stroke="var(--accent)"
+                  stroke="var(--green)"
                   strokeWidth="2.4"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -86,7 +86,7 @@ export function Features() {
                   [190, 27],
                   [250, 16],
                 ].map(([cx, cy], i) => (
-                  <circle key={i} cx={cx} cy={cy} r="3.4" fill="#fff" stroke="var(--accent)" strokeWidth="2" />
+                  <circle key={i} cx={cx} cy={cy} r="3.4" fill="#fff" stroke="var(--green)" strokeWidth="2" />
                 ))}
               </svg>
               <div className="trend-axis">
@@ -97,7 +97,7 @@ export function Features() {
               </div>
               <div className="row trend-foot">
                 <span className="nm">Следующий ретест</span>
-                <span className="val" style={{ color: "var(--accent)" }}>
+                <span className="val" style={{ color: "var(--brand)" }}>
                   через 3 мес.
                 </span>
               </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { BRAND, BRAND_COPY } from "../brand";
+import { CalmCanvas } from "./_components/CalmCanvas";
 
 const { name, owner } = BRAND_COPY[BRAND];
 
@@ -17,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" data-brand={BRAND}>
-      <body>{children}</body>
+      <body>
+        <CalmCanvas />
+        {children}
+      </body>
     </html>
   );
 }

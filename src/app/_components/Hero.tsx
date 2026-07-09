@@ -10,10 +10,10 @@ const TESTS = [
 function Tick() {
   return (
     <svg className="tick" viewBox="0 0 16 16" fill="none">
-      <circle cx="8" cy="8" r="8" fill="var(--accent-soft)" />
+      <circle cx="8" cy="8" r="8" fill="var(--brand-soft)" />
       <path
         d="M4.5 8.2l2.2 2.2 4.8-4.8"
-        stroke="var(--accent)"
+        stroke="var(--brand)"
         strokeWidth="1.6"
         strokeLinecap="round"
         strokeLinejoin="round"

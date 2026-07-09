@@ -1,64 +1,48 @@
 @import "tailwindcss";
 
 /* =========================================================
-   FONTS — Yandex Sans (YS Geo), local. Manrope as web fallback.
+   FONTS — Yandex YS family (Пульс design system).
+   YS Display = headings · YS Text = body/UI · Manrope fallback.
    ========================================================= */
-@font-face {
-  font-family: "Yandex Sans";
-  src: url("/fonts/YS Geo-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Yandex Sans";
-  src: url("/fonts/YS Geo-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Yandex Sans";
-  src: url("/fonts/YS Geo-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Yandex Sans";
-  src: url("/fonts/YS Geo-Heavy.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Yandex Sans";
-  src: url("/fonts/YS Geo-Black.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
+@font-face { font-family: "YS Text"; src: url("/fonts/ys/YSText-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "YS Text"; src: url("/fonts/ys/YSText-Medium.ttf")  format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "YS Text"; src: url("/fonts/ys/YSText-Bold.ttf")    format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "YS Display"; src: url("/fonts/ys/YSDisplay-Medium.ttf") format("truetype"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "YS Display"; src: url("/fonts/ys/YSDisplay-Bold.ttf")   format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "YS Display"; src: url("/fonts/ys/YSDisplay-Heavy.ttf")  format("truetype"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "YS Display"; src: url("/fonts/ys/YSDisplay-Black.ttf")  format("truetype"); font-weight: 900; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("/fonts/manrope/Manrope-Regular.woff2")  format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("/fonts/manrope/Manrope-Medium.woff2")   format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Manrope"; src: url("/fonts/manrope/Manrope-Bold.woff2")     format("woff2"); font-weight: 700; font-display: swap; }
 
 /* =========================================================
-   BRAND TOKENS
-   :root = Yandex (default). [data-brand="yango"] overrides accent only.
-   Everything downstream references --accent / --accent-deep / --accent-soft,
-   so re-skinning is a matter of swapping these four values.
+   DESIGN-SYSTEM TOKENS (Пульс — Yandex-Care skin)
+   ONE CTA accent: yellow (always ink text). Coral is DEMOTED to the
+   brand mark / highlights / flagged values only. Warm-paper canvas.
    ========================================================= */
 :root {
-  /* Neutrals — warm, care.yandex.ru-style paper */
-  --ink: #17140f;
+  /* Neutrals — warm paper */
+  --ink: #1b1a19;
   --body: #5b616e;
-  --mute: #9aa0ac;
-  --line: #ece9e3;
-  --paper: #f7f5f1;
+  --mute: #9b9b9f;
+  --line: #eaeaec;
+  --paper: #faf7f1;
+  --card: #fefcf8;
+  --card-frost: rgba(254, 252, 248, 0.68);
   --white: #ffffff;
 
-  /* Brand accent (Yandex red) */
-  --accent: #fc3f1d;
-  --accent-deep: #e32c0c;
-  --accent-soft: #fdece8; /* tinted background for chips/ticks */
-  --accent-glow: rgba(252, 63, 29, 0.4);
+  /* CTA accent — Yandex yellow. ALWAYS ink text; softened (reassuring). */
+  --accent: #ffdb4d;
+  --accent-deep: #ffce00;
+  --accent-soft: #fdf3cf;
+  --on-accent: #1b1a19;
+  --accent-glow: rgba(255, 206, 0, 0.18);
+
+  /* Brand — coral. Mark / highlights / flagged values ONLY. */
+  --brand: #fc3f1d;
+  --brand-deep: #c43214;
+  --brand-soft: #fdece8;
+  --brand-glow: rgba(252, 63, 29, 0.28);
 
   --green: #12a66a;
   --green-soft: #e7f6ef;
@@ -67,16 +51,18 @@
   --radius-sm: 14px;
   --maxw: 1120px;
 
-  --font-sans: "Yandex Sans", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "YS Display", "YS Text", "Manrope", system-ui, -apple-system, sans-serif;
+  --font-text: "YS Text", "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: var(--font-text);
 }
 
-/* Yango partner skin — kept wired for the future. Teal accent so a flip of
-   BRAND in brand.ts is instantly visible. */
+/* Yango partner skin — kept wired for the future (teal CTA). */
 [data-brand="yango"] {
   --accent: #17b8c9;
   --accent-deep: #0f9aa8;
   --accent-soft: #e3f6f8;
-  --accent-glow: rgba(23, 184, 201, 0.38);
+  --accent-glow: rgba(23, 184, 201, 0.24);
+  --on-accent: #ffffff;
 }
 
 @theme inline {
@@ -97,12 +83,20 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-text);
   color: var(--ink);
-  background: var(--white);
+  background: transparent;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
 }
 
 a {
@@ -110,28 +104,46 @@ a {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3 {
-  letter-spacing: -0.02em;
-  line-height: 1.08;
-}
-
 ::selection {
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
 }
 
-/* ---------- layout shell ---------- */
+/* =========================================================
+   CALM CANVAS — warm-paper atmosphere painted once behind the whole
+   page (fixed). Rendered by <CalmCanvas/> in layout; sections stay
+   transparent so it shows through, cards stay opaque for contrast.
+   Animate ONLY transform/opacity; blur set once; all ambient carries
+   .bg-atmo so one reduced-motion rule freezes it.
+   ========================================================= */
+.calm-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(120% 80% at 50% 8%, #fdfbf6 0%, #faf7f1 46%, #f3f0e9 100%);
+}
+.bg-atmo { pointer-events: none; }
+@keyframes phDriftA { 0% { transform: translate(-14vw,-6vh) scale(1); } 50% { transform: translate(10vw,8vh) scale(1.12); } 100% { transform: translate(-14vw,-6vh) scale(1); } }
+@keyframes phDriftB { 0% { transform: translate(20vw,50vh) scale(1.06); } 50% { transform: translate(-8vw,34vh) scale(0.94); } 100% { transform: translate(20vw,50vh) scale(1.06); } }
+@keyframes phDriftC { 0% { transform: translate(40vw,10vh) scale(1); } 50% { transform: translate(30vw,26vh) scale(1.14); } 100% { transform: translate(40vw,10vh) scale(1); } }
+@keyframes phDriftD { 0% { transform: translate(6vw,40vh) scale(1.04); } 50% { transform: translate(24vw,52vh) scale(0.96); } 100% { transform: translate(6vw,40vh) scale(1.04); } }
+@keyframes phBreath { 0% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.015); } 100% { transform: translateX(-50%) scale(1); } }
+
+/* =========================================================
+   LAYOUT SHELL
+   ========================================================= */
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0 24px;
 }
 .paper {
-  background: var(--paper);
+  background: transparent;
 }
 section {
+  position: relative;
   padding: 76px 0;
 }
 .sec-head {
@@ -143,7 +155,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--brand);
   margin-bottom: 12px;
 }
 .sec-head h2 {
@@ -156,7 +168,9 @@ section {
   color: var(--body);
 }
 
-/* ---------- buttons ---------- */
+/* =========================================================
+   BUTTONS — primary = softened yellow pill, ink text (design system).
+   ========================================================= */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -166,13 +180,15 @@ section {
   font-size: 16px;
   border: none;
   cursor: pointer;
-  border-radius: var(--radius-sm);
-  padding: 15px 22px;
-  transition: transform 0.12s ease, background 0.15s ease;
+  border-radius: 999px;
+  padding: 15px 24px;
+  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 .btn-accent {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
+  font-weight: 500;
+  box-shadow: 0 5px 18px var(--accent-glow);
 }
 .btn-accent:hover {
   background: var(--accent-deep);
@@ -181,23 +197,24 @@ section {
 .btn-ghost {
   background: transparent;
   color: var(--ink);
+  font-weight: 600;
   padding: 15px 4px;
 }
 .btn-ghost:hover {
-  color: var(--accent);
+  color: var(--brand);
 }
 .price-chip {
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(27, 26, 25, 0.1);
   border-radius: 9px;
   padding: 3px 9px;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
 }
 .btn-outline {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fff;
+  background: var(--card);
   border: 1.5px solid var(--line);
   color: var(--ink);
   border-radius: 12px;
@@ -211,7 +228,9 @@ section {
   border-color: var(--ink);
 }
 
-/* ---------- reveal-on-load / scroll ---------- */
+/* =========================================================
+   REVEAL
+   ========================================================= */
 @keyframes rise {
   to {
     opacity: 1;
@@ -227,7 +246,8 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .reveal,
   .bubble,
-  .panel {
+  .panel,
+  .bg-atmo {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -237,7 +257,9 @@ section {
   }
 }
 
-/* ---------- nav ---------- */
+/* =========================================================
+   NAV
+   ========================================================= */
 .nav-links {
   display: flex;
   align-items: center;
@@ -261,7 +283,9 @@ section {
   }
 }
 
-/* ---------- hero ---------- */
+/* =========================================================
+   HERO
+   ========================================================= */
 .hero {
   padding: 72px 0 40px;
 }
@@ -279,14 +303,14 @@ section {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--brand);
   margin-bottom: 20px;
 }
 .eyebrow .dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--brand);
   animation: pulseDot 1.6s ease-in-out infinite;
 }
 @keyframes pulseDot {
@@ -302,11 +326,12 @@ section {
 }
 .hero h1 {
   font-size: 56px;
-  font-weight: 800;
+  font-weight: 900;
+  letter-spacing: -0.03em;
   margin-bottom: 20px;
 }
 .hero h1 .hl {
-  color: var(--accent);
+  color: var(--brand);
 }
 .hero .sub {
   font-size: 19px;
@@ -350,13 +375,15 @@ section {
   }
 }
 
-/* ---------- phone demo ---------- */
+/* =========================================================
+   PHONE DEMO
+   ========================================================= */
 .phone {
-  background: var(--white);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 30px;
   padding: 18px;
-  box-shadow: 0 30px 60px -30px rgba(23, 20, 15, 0.28), 0 8px 20px -12px rgba(23, 20, 15, 0.12);
+  box-shadow: 0 30px 60px -30px rgba(27, 26, 25, 0.28), 0 8px 20px -12px rgba(27, 26, 25, 0.12);
   max-width: 360px;
   margin: 0 auto;
   width: 100%;
@@ -371,7 +398,7 @@ section {
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--brand);
   display: grid;
   place-items: center;
   color: #fff;
@@ -409,7 +436,7 @@ section {
   align-self: flex-start;
 }
 .bubble.u {
-  background: var(--accent);
+  background: var(--ink);
   color: #fff;
   border-bottom-right-radius: 5px;
   align-self: flex-end;
@@ -442,7 +469,7 @@ section {
   margin-bottom: 10px;
 }
 .panel-h .count {
-  color: var(--accent);
+  color: var(--brand);
 }
 .test {
   display: flex;
@@ -494,29 +521,31 @@ section {
   gap: 8px;
   margin-top: 14px;
   background: var(--accent);
-  color: #fff;
-  font-weight: 700;
+  color: var(--on-accent);
+  font-weight: 500;
   font-size: 15px;
   padding: 13px;
-  border-radius: 12px;
+  border-radius: 999px;
   opacity: 0;
   transform: translateY(6px);
   animation: pop 0.5s 0.1s forwards;
-  box-shadow: 0 12px 24px -12px var(--accent-glow);
+  box-shadow: 0 5px 18px var(--accent-glow);
 }
 .panel-cta svg {
   width: 18px;
   height: 18px;
 }
 
-/* ---------- steps ---------- */
+/* =========================================================
+   STEPS
+   ========================================================= */
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 .step {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 26px 22px;
@@ -524,7 +553,7 @@ section {
 .step .num {
   font-weight: 800;
   font-size: 15px;
-  color: var(--accent);
+  color: var(--brand);
   margin-bottom: 44px;
   display: flex;
   align-items: center;
@@ -533,7 +562,7 @@ section {
 .step .num .ln {
   flex: 1;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  background: linear-gradient(90deg, var(--brand), transparent);
 }
 .step h3 {
   font-size: 19px;
@@ -558,7 +587,9 @@ section {
   }
 }
 
-/* ---------- programs ---------- */
+/* =========================================================
+   PROGRAMS
+   ========================================================= */
 .programs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -566,7 +597,7 @@ section {
 }
 .prog {
   position: relative;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 24px;
@@ -577,11 +608,11 @@ section {
 }
 .prog:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px -24px rgba(23, 20, 15, 0.22);
+  box-shadow: 0 20px 40px -24px rgba(27, 26, 25, 0.22);
 }
 .prog.live {
-  border-color: var(--accent);
-  box-shadow: 0 20px 44px -26px var(--accent-glow);
+  border-color: var(--brand);
+  box-shadow: 0 20px 44px -26px var(--brand-glow);
 }
 .badge {
   align-self: flex-start;
@@ -592,7 +623,7 @@ section {
   margin-bottom: 18px;
 }
 .badge.live {
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
 }
 .badge.soon {
@@ -627,10 +658,10 @@ section {
 .prog .cta-soon {
   width: 100%;
   justify-content: center;
-  background: #fff;
+  background: var(--card);
   border: 1.5px solid var(--line);
   color: var(--body);
-  border-radius: 12px;
+  border-radius: 999px;
   padding: 12px;
   font-weight: 700;
   font-size: 15px;
@@ -653,7 +684,9 @@ section {
   }
 }
 
-/* ---------- feature split ---------- */
+/* =========================================================
+   FEATURE SPLIT
+   ========================================================= */
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -674,11 +707,11 @@ section {
   margin-bottom: 22px;
 }
 .visual-card {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px;
-  box-shadow: 0 24px 50px -32px rgba(23, 20, 15, 0.2);
+  box-shadow: 0 24px 50px -32px rgba(27, 26, 25, 0.2);
 }
 .row {
   display: flex;
@@ -707,8 +740,8 @@ section {
   border-radius: 20px;
 }
 .flag.low {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--brand-soft);
+  color: var(--brand);
 }
 .flag.ok {
   background: var(--green-soft);
@@ -722,7 +755,7 @@ section {
 }
 .spark i {
   width: 5px;
-  background: var(--accent);
+  background: var(--brand);
   border-radius: 2px;
   opacity: 0.85;
 }
@@ -791,7 +824,7 @@ section {
   height: 34px;
   flex: none;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--brand);
   color: #fff;
   font-weight: 800;
   display: grid;
@@ -832,8 +865,8 @@ section {
   color: var(--green);
 }
 .ins-mark.no {
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--brand-soft);
+  color: var(--brand);
 }
 .ins-cta {
   display: flex;
@@ -850,13 +883,13 @@ section {
   font-weight: 600;
 }
 .ins-clinic b {
-  color: var(--accent);
+  color: var(--brand);
   margin-left: 4px;
 }
 .ins-book {
   font-size: 14px;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--brand);
   white-space: nowrap;
 }
 @media (max-width: 820px) {
@@ -869,7 +902,9 @@ section {
   }
 }
 
-/* ---------- offer ---------- */
+/* =========================================================
+   OFFER (dark section)
+   ========================================================= */
 .offer {
   background: var(--ink);
   color: #fff;
@@ -945,7 +980,9 @@ section {
   }
 }
 
-/* ---------- waitlist ---------- */
+/* =========================================================
+   WAITLIST
+   ========================================================= */
 .waitlist {
   text-align: center;
   max-width: 560px;
@@ -973,9 +1010,10 @@ section {
   border: 1.5px solid var(--line);
   border-radius: 14px;
   outline: none;
+  background: var(--card);
 }
 .wl-form input:focus {
-  border-color: var(--accent);
+  border-color: var(--ink);
 }
 @media (max-width: 520px) {
   .wl-form {
@@ -983,7 +1021,9 @@ section {
   }
 }
 
-/* ---------- faq ---------- */
+/* =========================================================
+   FAQ
+   ========================================================= */
 .faq {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1004,7 +1044,9 @@ section {
   }
 }
 
-/* ---------- footer ---------- */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer {
   border-top: 1px solid var(--line);
   padding: 44px 0 56px;
@@ -1040,11 +1082,13 @@ footer {
   display: block;
   width: 100%;
   height: 26px;
-  color: var(--accent);
+  color: var(--brand);
   opacity: 0.9;
 }
 
-/* ---------- responsive typography ---------- */
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================= */
 @media (max-width: 720px) {
   .sec-head h2 {
     font-size: 29px;

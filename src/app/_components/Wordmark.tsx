@@ -17,7 +17,7 @@ export function Wordmark({ size = 20 }: { size?: number }) {
       <svg width={30} height={18} viewBox="0 0 30 18" fill="none" style={{ display: "block" }}>
         <path
           d="M1 9h6l2-6 3 12 3-9 2 3h9"
-          stroke="var(--accent)"
+          stroke="var(--brand)"
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
