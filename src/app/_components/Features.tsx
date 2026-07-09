@@ -1,3 +1,7 @@
+import { PRODUCT_URL } from "../../brand";
+import { AliceAvatar } from "./Marks";
+import { Icon } from "./Icon";
+
 export function Features() {
   return (
     <>
@@ -10,7 +14,7 @@ export function Features() {
               Загрузите прошлые результаты — Пульс покажет, что было не в норме, и учтёт это, когда
               будет собирать ваш чекап. Ничего сдавать заново без причины не придётся.
             </p>
-            <a href="#offer" className="btn-outline">
+            <a href={PRODUCT_URL} className="btn-outline">
               Загрузить прошлые анализы
             </a>
           </div>
@@ -54,7 +58,7 @@ export function Features() {
               Все анализы, расшифровки и динамика показателей хранятся в приложении. Сдали через
               полгода — сразу видно, что изменилось и в какую сторону.
             </p>
-            <a href="#offer" className="btn-outline">
+            <a href={PRODUCT_URL} className="btn-outline">
               Посмотреть в приложении
             </a>
           </div>
@@ -62,7 +66,9 @@ export function Features() {
             <div className="visual-card trend-card">
               <div className="trend-head">
                 <span className="trend-name">Витамин D</span>
-                <span className="trend-flag up">↑ вышел в норму</span>
+                <span className="trend-flag up">
+                  <Icon name="arrowUp" size={13} /> вышел в норму
+                </span>
               </div>
               <div className="trend-value">
                 42 <span>нг/мл</span>
@@ -115,34 +121,39 @@ export function Features() {
               Если врач направляет дальше, Алиса проверит вашу страховку, подскажет, что покрыто по
               ДМС, а что нет, и запишет в лучшую клинику рядом — без звонков в регистратуру.
             </p>
-            <a href="#offer" className="btn-outline">
+            <a href={PRODUCT_URL} className="btn-outline">
               Подключить страховку
             </a>
           </div>
           <div className="visual">
             <div className="visual-card ins-card">
               <div className="ins-head">
-                <span className="ins-badge">А</span>
+                <AliceAvatar size={34} />
                 <div>
                   <div className="ins-t">Направление: кардиолог</div>
                   <div className="ins-s">Алиса проверила вашу ДМС</div>
                 </div>
               </div>
               <div className="ins-row">
-                <span className="ins-mark ok">✓</span>
+                <span className="ins-mark ok"><Icon name="check" size={13} /></span>
                 <span className="nm">Приём кардиолога</span>
                 <span className="flag ok">Покрыто ДМС</span>
               </div>
               <div className="ins-row">
-                <span className="ins-mark no">₽</span>
+                <span className="ins-mark no"><Icon name="card" size={13} /></span>
                 <span className="nm">УЗИ сердца</span>
                 <span className="flag low">Из кармана · 2 400 ₽</span>
               </div>
               <div className="ins-cta">
                 <span className="ins-clinic">
-                  Клиника рядом <b>★ 4.9</b>
+                  Клиника рядом{" "}
+                  <b>
+                    <Icon name="star" size={13} /> 4.9
+                  </b>
                 </span>
-                <span className="ins-book">Записать →</span>
+                <span className="ins-book">
+                  Записать <Icon name="arrowRight" size={15} />
+                </span>
               </div>
             </div>
           </div>

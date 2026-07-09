@@ -1,3 +1,7 @@
+import { PRODUCT_URL } from "../../brand";
+import { AliceAvatar } from "./Marks";
+import { Icon } from "./Icon";
+
 const TESTS = [
   "Витамин D",
   "Ферритин",
@@ -39,11 +43,11 @@ export function Hero() {
             возраст, пол и историю. Только то, что действительно нужно сдать, без лишнего.
           </p>
           <div className="hero-cta">
-            <a href="#offer" className="btn btn-accent">
+            <a href={PRODUCT_URL} className="btn btn-accent">
               Собрать мой чекап <span className="price-chip">9 900 ₽</span>
             </a>
             <a href="#how" className="btn btn-ghost">
-              Как это работает →
+              Как это работает <Icon name="arrowRight" size={18} />
             </a>
           </div>
           <div className="trust">
@@ -57,9 +61,8 @@ export function Hero() {
 
         <div className="phone" aria-hidden="true">
           <div className="phone-top">
-            <span className="a-badge">А</span>
+            <AliceAvatar size={26} />
             <span className="a-name">Алиса · Пульс</span>
-            <span className="a-status">● онлайн</span>
           </div>
           <div className="chat">
             <div className="bubble a" style={{ animationDelay: ".05s" }}>
@@ -75,7 +78,7 @@ export function Hero() {
               Да, устаю
             </div>
             <div className="bubble a" style={{ animationDelay: "1.85s" }}>
-              Собрала панель под вас — 6 показателей, ничего лишнего 👇
+              Собрала панель под вас — 6 показателей, ничего лишнего.
             </div>
           </div>
           <div className="panel" style={{ animationDelay: "2.3s" }}>

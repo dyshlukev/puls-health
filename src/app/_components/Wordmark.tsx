@@ -1,6 +1,7 @@
 import { BRAND, BRAND_COPY } from "../../brand";
+import { PulseMark } from "./Marks";
 
-/** Pulse wordmark: a heartbeat line + the product name from brand config. */
+/** Pulse wordmark: the canonical disc + heartbeat mark + the product name. */
 export function Wordmark({ size = 20 }: { size?: number }) {
   const { name } = BRAND_COPY[BRAND];
   return (
@@ -14,15 +15,7 @@ export function Wordmark({ size = 20 }: { size?: number }) {
         letterSpacing: "-0.01em",
       }}
     >
-      <svg width={30} height={18} viewBox="0 0 30 18" fill="none" style={{ display: "block" }}>
-        <path
-          d="M1 9h6l2-6 3 12 3-9 2 3h9"
-          stroke="var(--brand)"
-          strokeWidth="2.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <PulseMark size={Math.round(size * 1.1)} />
       {name}
     </span>
   );

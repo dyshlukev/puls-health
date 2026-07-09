@@ -1,3 +1,5 @@
+import { PRODUCT_URL } from "../../brand";
+
 const INCLUDED = [
   "Персональный ИИ-набор анализов, собранный Алисой под вас",
   "Расшифровка результатов простым языком",
@@ -46,7 +48,7 @@ export function Offer() {
             <div className="note">
               Забор биоматериала — в партнёрской лаборатории или на дому
             </div>
-            <a href="#" className="btn btn-accent">
+            <a href={PRODUCT_URL} className="btn btn-accent">
               Собрать мой чекап
             </a>
           </div>

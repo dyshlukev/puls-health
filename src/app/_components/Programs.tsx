@@ -1,15 +1,21 @@
 "use client";
 
-const SOON = [
+import { PRODUCT_URL } from "../../brand";
+import { Icon, type IconName } from "./Icon";
+
+const SOON: { icon: IconName; h: string; p: string }[] = [
   {
+    icon: "heart",
     h: "Снижение веса",
     p: "Метаболическая панель, программа питания и сопровождение — чтобы вес уходил под контролем.",
   },
   {
+    icon: "sun",
     h: "Энергия и дефициты",
     p: "Целевая панель дефицитов — D, железо, B12, щитовидка — и добавки по подписке, чтобы вернуть силы.",
   },
   {
+    icon: "leaf",
     h: "Красота изнутри",
     p: "Анализы для кожи, волос и ногтей и beauty-добавки по подписке — с фото-динамикой результата.",
   },
@@ -36,6 +42,7 @@ export function Programs() {
         </div>
         <div className="programs">
           <div className="prog live">
+            <span className="prog-ic"><Icon name="sparkle" size={22} /></span>
             <span className="badge live">Доступно</span>
             <h3>Персональный ИИ-чекап</h3>
             <p>
@@ -44,12 +51,13 @@ export function Programs() {
             <div className="pr">
               <s>14 900 ₽</s>9 900 ₽
             </div>
-            <a href="#offer" className="btn btn-accent cta-live">
+            <a href={PRODUCT_URL} className="btn btn-accent cta-live">
               Собрать чекап
             </a>
           </div>
           {SOON.map((s) => (
             <div className="prog" key={s.h}>
+              <span className="prog-ic"><Icon name={s.icon} size={22} /></span>
               <span className="badge soon">Скоро</span>
               <h3>{s.h}</h3>
               <p>{s.p}</p>
