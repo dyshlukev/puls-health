@@ -94,9 +94,7 @@ export function Hero() {
             ))}
             <div className="panel-foot">
               <span className="lab">Сдать: партнёрская лаба или дом</span>
-              <span className="pr">
-                <s>14 900 ₽</s>9 900 ₽
-              </span>
+              <span className="pr">от 1 990 ₽</span>
             </div>
             <div className="panel-cta" style={{ animationDelay: "2.6s" }}>
               Собрать чекап

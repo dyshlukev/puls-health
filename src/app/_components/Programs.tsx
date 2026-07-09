@@ -48,9 +48,7 @@ export function Programs() {
             <p>
               Персональный ИИ-чекап: Алиса подбирает анализы под вас. Расшифровка и врач включены.
             </p>
-            <div className="pr">
-              <s>14 900 ₽</s>9 900 ₽
-            </div>
+            <div className="pr">от 1 990 ₽</div>
             <a href={PRODUCT_URL} className="btn btn-accent cta-live">
               Собрать чекап
             </a>

@@ -973,7 +973,8 @@ section {
   font-weight: 800;
   letter-spacing: -0.03em;
 }
-.offer-price .big s {
+.offer-price .big s,
+.offer-price .big .from {
   font-size: 20px;
   color: var(--mute);
   font-weight: 600;
