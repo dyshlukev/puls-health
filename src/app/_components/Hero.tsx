@@ -44,7 +44,7 @@ export function Hero() {
           </p>
           <div className="hero-cta">
             <a href={PRODUCT_URL} className="btn btn-accent">
-              Собрать мой чекап <span className="price-chip">9 900 ₽</span>
+              Собрать мой чекап <span className="price-chip">от 1 990 ₽</span>
             </a>
             <a href="#how" className="btn btn-ghost">
               Как это работает <Icon name="arrowRight" size={18} />
