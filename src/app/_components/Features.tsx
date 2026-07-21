@@ -1,159 +1,115 @@
-import { PRODUCT_URL } from "../../brand";
 import { AliceAvatar } from "./Marks";
 import { Icon } from "./Icon";
 
 export function Features() {
   return (
     <>
-      {/* Upload old analyses */}
-      <section className="paper">
+      <section className="paper" id="after-order">
         <div className="wrap split">
           <div>
-            <h2>Уже сдавали анализы? Они не пропадут</h2>
+            <div className="sec-eyebrow">После оплаты</div>
+            <h2>Всё нужное для сдачи — в одном заказе</h2>
             <p>
-              Загрузите прошлые результаты — Пульс покажет, что было не в норме, и учтёт это, когда
-              будет собирать ваш чекап. Ничего сдавать заново без причины не придётся.
+              Пульс сохраняет код заказа, сумму, выбранную точку и текущий статус. После
+              авторизации можно вернуться к заказу и проверить информацию для посещения.
             </p>
-            <a href={PRODUCT_URL} className="btn-outline">
-              Загрузить прошлые анализы
-            </a>
           </div>
           <div className="visual">
-            <div className="visual-card">
-              <div className="row">
-                <span className="nm">Ферритин</span>
-                <span className="val">
-                  <span className="flag low">Низкий</span>18
-                </span>
-              </div>
-              <div className="row">
-                <span className="nm">Витамин D</span>
-                <span className="val">
-                  <span className="flag low">Низкий</span>21
-                </span>
-              </div>
-              <div className="row">
-                <span className="nm">ТТГ</span>
-                <span className="val">
-                  <span className="flag ok">В норме</span>2.1
-                </span>
-              </div>
-              <div className="row">
-                <span className="nm">Гемоглобин</span>
-                <span className="val">
-                  <span className="flag ok">В норме</span>134
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Personal cabinet */}
-      <section>
-        <div className="wrap split rev">
-          <div>
-            <h2>Здоровье — в одном месте</h2>
-            <p>
-              Все анализы, расшифровки и динамика показателей хранятся в приложении. Сдали через
-              полгода — сразу видно, что изменилось и в какую сторону.
-            </p>
-            <a href={PRODUCT_URL} className="btn-outline">
-              Посмотреть в приложении
-            </a>
-          </div>
-          <div className="visual">
-            <div className="visual-card trend-card">
-              <div className="trend-head">
-                <span className="trend-name">Витамин D</span>
-                <span className="trend-flag up">
-                  <Icon name="arrowUp" size={13} /> вышел в норму
-                </span>
-              </div>
-              <div className="trend-value">
-                42 <span>нг/мл</span>
-              </div>
-              <svg className="trend" viewBox="0 0 260 96" fill="none" preserveAspectRatio="none">
-                <path
-                  d="M10 68 L70 56 L130 40 L190 27 L250 16 L250 96 L10 96 Z"
-                  fill="var(--green-soft)"
-                />
-                <path
-                  d="M10 68 L70 56 L130 40 L190 27 L250 16"
-                  stroke="var(--green)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                {[
-                  [10, 68],
-                  [70, 56],
-                  [130, 40],
-                  [190, 27],
-                  [250, 16],
-                ].map(([cx, cy], i) => (
-                  <circle key={i} cx={cx} cy={cy} r="3.4" fill="#fff" stroke="var(--green)" strokeWidth="2" />
-                ))}
-              </svg>
-              <div className="trend-axis">
-                <span>Янв</span>
-                <span>Апр</span>
-                <span>Июл</span>
-                <span>Окт</span>
-              </div>
-              <div className="row trend-foot">
-                <span className="nm">Следующий ретест</span>
-                <span className="val" style={{ color: "var(--brand)" }}>
-                  через 3 мес.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Insurance / routing */}
-      <section className="paper">
-        <div className="wrap split">
-          <div>
-            <h2>Нужен специалист? Алиса разберётся со страховкой</h2>
-            <p>
-              Если врач направляет дальше, Алиса проверит вашу страховку, подскажет, что покрыто по
-              ДМС, а что нет, и запишет в лучшую клинику рядом — без звонков в регистратуру.
-            </p>
-            <a href={PRODUCT_URL} className="btn-outline">
-              Подключить страховку
-            </a>
-          </div>
-          <div className="visual">
-            <div className="visual-card ins-card">
-              <div className="ins-head">
-                <AliceAvatar size={34} />
+            <div className="visual-card order-card">
+              <div className="order-head">
                 <div>
-                  <div className="ins-t">Направление: кардиолог</div>
-                  <div className="ins-s">Алиса проверила вашу ДМС</div>
+                  <span className="order-label">Заказ</span>
+                  <strong>№ P-0241</strong>
                 </div>
-              </div>
-              <div className="ins-row">
-                <span className="ins-mark ok"><Icon name="check" size={13} /></span>
-                <span className="nm">Приём кардиолога</span>
-                <span className="flag ok">Покрыто ДМС</span>
-              </div>
-              <div className="ins-row">
-                <span className="ins-mark no"><Icon name="card" size={13} /></span>
-                <span className="nm">УЗИ сердца</span>
-                <span className="flag low">Из кармана · 2 400 ₽</span>
-              </div>
-              <div className="ins-cta">
-                <span className="ins-clinic">
-                  Клиника рядом{" "}
-                  <b>
-                    <Icon name="star" size={13} /> 4.9
-                  </b>
+                <span className="status-pill">
+                  <Icon name="check" size={13} /> Оплачен
                 </span>
-                <span className="ins-book">
-                  Записать <Icon name="arrowRight" size={15} />
-                </span>
+              </div>
+              <div className="order-code">
+                <span>Код для лаборатории</span>
+                <strong>482 731</strong>
+              </div>
+              <div className="order-row">
+                <span>Точка сдачи</span>
+                <b>ул. Примерная, 12</b>
+              </div>
+              <div className="order-row">
+                <span>Сумма</span>
+                <b>ХХХХ ₽</b>
+              </div>
+              <div className="order-note">Возьмите с собой документ, указанный в инструкции.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="scope-section">
+        <div className="wrap">
+          <div className="sec-head">
+            <div className="sec-eyebrow">Желательно при согласовании</div>
+            <h2>Две возможности, которые могут дополнить MVP</h2>
+            <p>
+              Их включение зависит от решений Legal и СИБ. Базовый сценарий заказа работает и без
+              них.
+            </p>
+          </div>
+          <div className="conditional-grid">
+            <article className="conditional-card">
+              <span className="conditional-icon">
+                <Icon name="sparkle" size={22} />
+              </span>
+              <div>
+                <h3>Короткий опросник</h3>
+                <p>
+                  Несколько вопросов о целях помогут отсортировать и подсветить готовые продукты.
+                  Их состав останется фиксированным.
+                </p>
+              </div>
+            </article>
+            <article className="conditional-card">
+              <span className="conditional-icon">
+                <Icon name="document" size={22} />
+              </span>
+              <div>
+                <h3>Результаты внутри Пульса</h3>
+                <p>
+                  Значения, единицы, референсы и отметки будут показаны ровно в том виде, в котором
+                  их передала лаборатория, без персональной интерпретации.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="paper vision-section" id="vision">
+        <div className="wrap">
+          <div className="vision-panel">
+            <div className="vision-copy">
+              <span className="scope-label">После MVP · видение</span>
+              <h2>Алиса поможет лучше разобраться в анализах</h2>
+              <p>
+                Мы хотим интегрировать Пульс с Алисой и использовать агентские возможности для
+                помощи в подборе и интерпретации анализов. Это направление развития, а не функция
+                текущего MVP.
+              </p>
+              <small>
+                Конкретные сценарии появятся только после продуктовой, медицинской, юридической и
+                проверки безопасности.
+              </small>
+            </div>
+            <div className="vision-flow" aria-hidden="true">
+              <div className="vision-avatar">
+                <AliceAvatar size={44} ring />
+                <span>Алиса · Пульс</span>
+              </div>
+              <div className="vision-step">
+                <Icon name="sparkle" size={19} />
+                <span>Помощь с выбором</span>
+              </div>
+              <div className="vision-step">
+                <Icon name="document" size={19} />
+                <span>Помощь с интерпретацией</span>
               </div>
             </div>
           </div>

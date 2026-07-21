@@ -8,10 +8,9 @@ export function Waitlist() {
   return (
     <section className="paper" id="waitlist">
       <div className="wrap waitlist">
-        <h2>Новые программы — скоро</h2>
+        <h2>Узнайте о запуске Пульса</h2>
         <p>
-          Оставьте почту — напишем, когда откроем похудение, контроль диабета и ведение
-          беременности.
+          Оставьте почту — напишем, когда комплексные обследования станут доступны для заказа.
         </p>
         {done ? (
           <div style={{ fontWeight: 700, color: "var(--green)", fontSize: 17 }}>

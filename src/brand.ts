@@ -13,8 +13,8 @@ export type Brand = "yandex" | "yango";
 export const BRAND: Brand = "yandex";
 
 /**
- * Where the product-entry CTAs ("Собрать чекап" / "подобрать") send the user —
- * the live Пульс funnel. Kept here so every CTA points at one place.
+ * Where product-entry CTAs send the user. Kept here so every CTA points at
+ * the same Пульс prototype while the MVP funnel is being built.
  */
 export const PRODUCT_URL = "https://pulse-v01.vercel.app/";
 

@@ -1,14 +1,14 @@
 import { PRODUCT_URL } from "../../brand";
-import { AliceAvatar } from "./Marks";
+import { PulseMark } from "./Marks";
 import { Icon } from "./Icon";
 
 const TESTS = [
-  "Витамин D",
-  "Ферритин",
-  "ТТГ (щитовидная железа)",
   "Общий анализ крови",
   "Глюкоза",
-  "Витамин B12",
+  "Общий белок",
+  "Ферритин",
+  "Витамин D",
+  "ТТГ",
 ];
 
 function Tick() {
@@ -33,58 +33,45 @@ export function Hero() {
         <div>
           <span className="eyebrow">
             <span className="dot" />
-            Персональный ИИ-чекап · от Яндекса
+            Комплексные обследования · от Яндекса
           </span>
           <h1>
-            Не знаете, какие анализы сдать? <span className="hl">Алиса подберёт.</span>
+            Сдать нужные исследования — <span className="hl">без сложного выбора</span>
           </h1>
           <p className="sub">
-            Пройдите опросник, составленный вместе с врачами — и Алиса соберёт чекап под ваш
-            возраст, пол и историю. Только то, что действительно нужно сдать, без лишнего.
+            Выберите готовое комплексное обследование с понятным составом и ценой. Пульс поможет
+            найти удобную точку лаборатории-партнёра, оформить и оплатить заказ.
           </p>
           <div className="hero-cta">
             <a href={PRODUCT_URL} className="btn btn-accent">
-              Собрать мой чекап <span className="price-chip">от 1 990 ₽</span>
+              Посмотреть обследования <span className="price-chip">от ХХХХ ₽</span>
             </a>
             <a href="#how" className="btn btn-ghost">
               Как это работает <Icon name="arrowRight" size={18} />
             </a>
           </div>
           <div className="trust">
-            <b>Партнёрские лаборатории</b>
+            <b>Фиксированный состав</b>
             <span className="sep">·</span>
-            <b>Медсестра на дом</b>
+            <b>Цена до оплаты</b>
             <span className="sep">·</span>
-            <b>Расшифровка и врач</b>
+            <b>Код и статус заказа</b>
           </div>
         </div>
 
         <div className="phone" aria-hidden="true">
           <div className="phone-top">
-            <AliceAvatar size={26} />
-            <span className="a-name">Алиса · Пульс</span>
+            <PulseMark size={26} />
+            <span className="a-name">Пульс · готовое обследование</span>
           </div>
-          <div className="chat">
-            <div className="bubble a" style={{ animationDelay: ".05s" }}>
-              Привет! Помогу собрать чекап. Сколько вам лет?
-            </div>
-            <div className="bubble u" style={{ animationDelay: ".5s" }}>
-              34
-            </div>
-            <div className="bubble a" style={{ animationDelay: ".95s" }}>
-              Были частая усталость или проблемы со сном?
-            </div>
-            <div className="bubble u" style={{ animationDelay: "1.4s" }}>
-              Да, устаю
-            </div>
-            <div className="bubble a" style={{ animationDelay: "1.85s" }}>
-              Собрала панель под вас — 6 показателей, ничего лишнего.
-            </div>
+          <div className="product-kicker">Пример продукта · Базовое обследование</div>
+          <div className="product-summary">
+            Готовый комплекс для проверки основных показателей
           </div>
-          <div className="panel" style={{ animationDelay: "2.3s" }}>
+          <div className="panel product-panel">
             <div className="panel-h">
-              <span>Ваш чекап · Персональный</span>
-              <span className="count">6 анализов</span>
+              <span>Фиксированный состав</span>
+              <span className="count">6 исследований</span>
             </div>
             {TESTS.map((t) => (
               <div className="test" key={t}>
@@ -93,11 +80,11 @@ export function Hero() {
               </div>
             ))}
             <div className="panel-foot">
-              <span className="lab">Сдать: партнёрская лаба или дом</span>
-              <span className="pr">от 1 990 ₽</span>
+              <span className="lab">Точку сдачи выберете дальше</span>
+              <span className="pr">ХХХХ ₽</span>
             </div>
-            <div className="panel-cta" style={{ animationDelay: "2.6s" }}>
-              Собрать чекап
+            <div className="panel-cta product-panel-cta">
+              Выбрать точку
               <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
                 <path
                   d="M4 10h11M11 6l4 4-4 4"
