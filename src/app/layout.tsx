@@ -6,9 +6,9 @@ import { CalmCanvas } from "./_components/CalmCanvas";
 const { name, owner } = BRAND_COPY[BRAND];
 
 export const metadata: Metadata = {
-  title: `${owner} ${name} — персональный ИИ-чекап`,
+  title: `${owner} ${name} — комплексные лабораторные обследования`,
   description:
-    "Ответьте на пару вопросов — и Алиса соберёт чекап под ваш возраст, пол и историю. Только нужные анализы, расшифровка простым языком и врач.",
+    "Готовые комплексные обследования с понятным составом и ценой. Выберите точку лаборатории-партнёра, оформите заказ и следите за его статусом.",
 };
 
 export default function RootLayout({

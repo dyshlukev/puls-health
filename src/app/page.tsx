@@ -14,9 +14,9 @@ export default function Home() {
     <>
       <Nav />
       <Hero />
+      <Programs />
       <AntiUpsell />
       <HowItWorks />
-      <Programs />
       <Features />
       <Offer />
       <Waitlist />

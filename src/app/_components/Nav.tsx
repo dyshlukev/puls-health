@@ -27,8 +27,8 @@ export function Nav() {
           <Wordmark />
         </Link>
         <nav className="nav-links">
+          <a href="#programs">Обследования</a>
           <a href="#how">Как это работает</a>
-          <a href="#programs">Программы</a>
           <a href="#login" className="login">
             Войти
           </a>
